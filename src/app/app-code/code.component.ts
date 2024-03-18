@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-code',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './code.component.scss'
 })
 export class CodeComponent {
-
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Everest Shi - Code');
+  }
 }

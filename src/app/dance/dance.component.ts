@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dance',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './dance.component.scss'
 })
 export class DanceComponent {
-
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Everest Shi - Dance');
+  }
 }
