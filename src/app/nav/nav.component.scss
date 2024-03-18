@@ -1,0 +1,94 @@
+nav {
+    background-color: #333; /* Background color of the navbar */
+    width: 100%; /* Stretch navbar across the entire width of the page */
+    position: fixed; /* Position the navbar fixed at the top of the page */
+    top: 0; /* Align navbar to the top of the page */
+    left: 0; /* Align navbar to the left of the page */
+    z-index: 1000; /* Ensure navbar stays above other content */
+    padding: 10px 15px; /* Add padding to the links */
+}
+  
+  .container {
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add padding to the container */
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    width: 40px; /* Set width of the logo */
+    height: 40px; /* Set height of the logo */
+    border-radius: 50%; /* Crop the logo to a circle */
+    margin-right: 20px; /* Add space between logo and navigation links */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .nav-list {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 20px; /* Add space between list items */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    position: relative;
+  }
+  
+  .nav-item:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
+  }
+  
+  .nav-item a {
+    text-decoration: none; /* Remove underline from anchor links */
+    color: #fff; /* Text color of the links */
+    font-weight: bold; /* Bold font weight */
+    padding: 10px 15px; /* Add padding to the links */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  .nav-item a:hover {
+    background-color: #555; /* Background color on hover */
+  }
+
+  .dropdown-menu {
+    display: none; /* Hide dropdown menu by default */
+    position: absolute; /* Position dropdown menu */
+    top: calc(100% + 5px); /* Position dropdown menu below nav item */
+    left: 0; /* Align dropdown menu with nav item */
+    background-color: #333; /* Background color of dropdown menu */
+    padding: 10px 0; /* Add padding to dropdown menu */
+    z-index: 1000; /* Ensure dropdown menu stays above other content */
+    width: 150px; /* Set width of dropdown menu */
+    border-radius: 5px; /* Add border radius to dropdown menu */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow for dropdown menu */
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    display: block; /* Show dropdown menu on hover */
+  }
+  
+  .dropdown-menu li {
+    margin: 0;
+    padding: 8px 20px;
+    list-style-type: none; /* Remove bullet points from the list */
+}
+  
+  .dropdown-menu li:hover {
+    background-color: #555; /* Background color on hover */
+  }
+  
+  .dropdown-menu a {
+    color: #fff; /* Text color of dropdown items */
+    text-decoration: none; /* Remove underline from dropdown items */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #555; /* Background color on hover */
+  }
+  
+  
