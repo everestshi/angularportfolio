@@ -1,11 +1,11 @@
 nav {
     background-color: #333; /* Background color of the navbar */
     width: 100%; /* Stretch navbar across the entire width of the page */
-    position: fixed; /* Position the navbar fixed at the top of the page */
     top: 0; /* Align navbar to the top of the page */
     left: 0; /* Align navbar to the left of the page */
     z-index: 1000; /* Ensure navbar stays above other content */
     padding: 10px 15px; /* Add padding to the links */
+    margin-bottom: 20px; /* Add margin to the bottom of the navbar */
 }
   
   .container {
@@ -50,8 +50,9 @@ nav {
     transition: background-color 0.3s; /* Smooth transition for background color */
   }
   
-  .nav-item a:hover {
-    background-color: #555; /* Background color on hover */
+  .nav-item > a:hover,
+  .nav-item > .active {
+    background-color: #555; /* Background color on hover and when active */
   }
 
   .dropdown-menu {
@@ -87,7 +88,8 @@ nav {
     transition: background-color 0.3s; /* Smooth transition for background color */
   }
   
-  .dropdown-menu a:hover {
+  .dropdown-menu a:hover,
+  .dropdown-menu .active{
     background-color: #555; /* Background color on hover */
   }
   

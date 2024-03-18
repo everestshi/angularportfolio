@@ -1,0 +1,28 @@
+import { Tag } from '../models/tag';
+
+export const TAGS: Tag[] = [
+    { id: 1, name: "React", slug: "react", color: "#61DAFB" },
+    { id: 2, name: "Vue.js", slug: "vuejs", color: "#42b883" },
+    { id: 3, name: "JavaScript", slug: "javascript", color: "#f0db4f" },
+    { id: 4, name: "Express.js", slug: "expressjs", color: "#000000" },
+    { id: 5, name: "TypeScript", slug: "typescript", color: "#007acc" },
+    { id: 6, name: "Docker", slug: "docker", color: "#2496ed" },
+    { id: 7, name: "HTML/CSS", slug: "htmlcss", color: "#e34c26" },
+    { id: 8, name: "SASS", slug: "sass", color: "#cc6699" },
+    { id: 9, name: "Flutter", slug: "flutter", color: "#02569B" },
+    { id: 10, name: "Angular", slug: "angular", color: "#dd1b16" },
+    { id: 11, name: ".NET", slug: "dotnet", color: "#512bd4" },
+    { id: 12, name: "ASP.NET", slug: "aspnet", color: "#512bd4" },
+    { id: 13, name: "MongoDB", slug: "mongodb", color: "#4DB33D" },
+    { id: 14, name: "PostgreSQL", slug: "postgresql", color: "#336791" },
+    { id: 15, name: "MySQL", slug: "mysql", color: "#00758f" },
+    { id: 16, name: "SQLite", slug: "sqlite", color: "#003B57" },
+    { id: 17, name: "Azure", slug: "azure", color: "#0089D6" },
+    { id: 18, name: "AWS", slug: "aws", color: "#F7931E" },
+    { id: 19, name: "Next.js", slug: "nextjs", color: "#000000" },
+    { id: 20, name: "Kotlin", slug: "kotlin", color: "#A97BFF" },
+    { id: 21, name: "C#", slug: "csharp", color: "#68217A" },
+    { id: 22, name: "Vite.js", slug: "vitejs", color: "#646CFF" },
+    { id: 23, name: "SQL", slug: "sql", color: "#F29221" },
+    { id: 24, name: "Node.js", slug: "nodejs", color: "#68A063" },
+];

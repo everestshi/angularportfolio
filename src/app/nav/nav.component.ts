@@ -16,7 +16,6 @@ import { RouterModule } from '@angular/router';
 export class NavComponent {
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
   ) {}
   
 }

@@ -1,34 +1,33 @@
 <nav>
-    <div class="container">
-      <a routerLink="/">
-        <div class="logo">
-          <img src="../../assets/images/unbound-logo-whitebg.png" alt="Logo">
-        </div>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/dance">Dance</a>
-          <ul class="dropdown-menu">
-            <li><a routerLink="/dance">About</a></li>
-            <li><a routerLink="/dances-performances">Dances & Performances</a></li>
-            <li><a routerLink="/resume-dance">Resume</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/code">Code</a>
-          <ul class="dropdown-menu">
-            <li><a routerLink="/code">About</a></li>
-            <li><a routerLink="/portfolio">Portfolio</a></li>
-            <li><a routerLink="/resume-code">Resume</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
+  <div class="container">
+    <a routerLink="/">
+      <div class="logo">
+        <img src="../../assets/images/unbound-logo-whitebg.png" alt="Logo">
+      </div>
+    </a>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/dance" routerLinkActive="active">Dance</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/dance" routerLinkActive="active">About</a></li>
+          <li><a routerLink="/dances-performances" routerLinkActive="active">Dances & Performances</a></li>
+          <li><a routerLink="/resume-dance" routerLinkActive="active">Resume</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/code" routerLinkActive="active">Code</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/code" routerLinkActive="active">About</a></li>
+          <li><a routerLink="/developer-portfolio" routerLinkActive="active">Portfolio</a></li>
+          <li><a routerLink="/developer-resume" routerLinkActive="active">Resume</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>

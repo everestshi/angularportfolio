@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-resume-code',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './resume-code.component.scss'
 })
 export class ResumeCodeComponent {
-
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Everest Shi - Developer Resume');
+  }
 }
