@@ -50,17 +50,17 @@ export class PortfolioComponent implements OnInit{
   }
 
 
-  applyFilters(): void {
-    if (this.tagFilters.length > 0) {
-      this.projects = this.projectService.getProjects().filter(project =>
-        this.tagFilters.every(filterTag =>
-          project.tags.some(tag => tag.id === filterTag.id)
-        )
-      );
-    } else {
-      this.projects = this.projectService.getProjects();
-    }
+applyFilters(): void {
+  if (this.tagFilters.length > 0) {
+    this.projects = this.projectService.getProjects().filter(project =>
+      this.tagFilters.every(filterTag =>
+        project.tags.some(tag => tag.id === filterTag.id)
+      )
+    );
+  } else {
+    this.projects = this.projectService.getProjects();
   }
+}
 
   clearFilters(): void {
     this.filterService.clearFilters();
