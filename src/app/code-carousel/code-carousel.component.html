@@ -1,0 +1,22 @@
+<div class="slides">
+    <div
+      class="slide"
+      *ngIf="slides[currentSlide]"
+      [ngStyle]="{
+        'opacity': hidden ? '0' : '1',
+        'transition': 'opacity ' + animationSpeed + 'ms ease-in-out'
+      }"
+    >
+      {{ slides[currentSlide].name }}
+    </div>
+  
+    <div id="indicators" *ngIf="indicatorsVisible">
+      <div
+        *ngFor="let slide of slides; let i = index"
+        (click)="jumpToSlide(i)"
+        class="indicator"
+        [ngClass]="{ active: i === currentSlide }"
+      ></div>
+    </div>
+  </div>
+  

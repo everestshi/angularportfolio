@@ -3,4 +3,5 @@ export interface Tag {
     name: string;
     slug: string;
     color: string;
+    category: string;
 }

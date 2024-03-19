@@ -1,0 +1,21 @@
+<article>
+    <section class="project-detail">
+      <img
+        *ngIf="project?.images"
+        [src]="'assets/images/' + project?.images"
+        alt="Image of {{ project?.name }}"
+      />
+      <div>
+        <h2>{{ project?.name | uppercase }}</h2>
+        <div>{{ project?.description }}</div>
+      </div>
+    </section>
+    <footer>
+      <div *ngIf="project?.tags?.length">
+        Tags:
+        <span *ngFor="let tag of project?.tags">
+          {{ tag.name }}
+        </span>
+      </div>
+    </footer>
+  </article>
