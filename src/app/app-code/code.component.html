@@ -1,1 +1,27 @@
-<p>code works!</p>
+<div class="about-code-container">
+    <div class="name-title-box">
+        <div class="name">Everest Shi</div>
+        <div class="title">Junior Software Developer</div>
+    </div>
+    <div class="description-box">
+        <div class="heading">Personal Description</div>
+        <div class="description">Your personal description here...</div>
+    </div>
+    <div class="skills-box">
+        <div class="heading">Technical Skills</div>
+        <ul class="skills-list">
+            <li>Technical Skill 1</li>
+            <li>Technical Skill 2</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </div>
+    <div class="project-carousel-box">
+        <app-code-carousel 
+            [indicatorsVisible]="true"
+            [animationSpeed]="500"
+            [slides]="slides"
+            [autoPlay]="true"
+            [autoPlaySpeed]="2000">
+        </app-code-carousel>
+    </div>
+</div>

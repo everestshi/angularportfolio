@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
     category_id: 3,
     category: { id: 3, slug: 'full-stack', name: 'Full Stack' },
     tags: [
-      TAGS.find(tag => tag.slug === 'dotnet')!,
+      TAGS.find(tag => tag.slug === 'aspnetcore')!,
       TAGS.find(tag => tag.slug === 'csharp')!,
       TAGS.find(tag => tag.slug === 'sql')!
     ],
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     category: { id: 2, slug: 'front-end', name: 'Front End' },
     tags: [
       TAGS.find(tag => tag.slug === 'htmlcss')!,
-      TAGS.find(tag => tag.slug === 'sass')!,
+      TAGS.find(tag => tag.slug === 'sassscss')!,
       TAGS.find(tag => tag.slug === 'nodejs')!
     ],
   },
