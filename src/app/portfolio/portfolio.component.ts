@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
@@ -24,9 +25,13 @@ export class PortfolioComponent implements OnInit{
   projects: Project[] = [];
   tags: Tag[] = [];
   tagFilters: Tag[] = [];
+  tagSlugs: string[] = []; // Array to store tag slugs
+
 
   constructor(
     private titleService: Title,
+    private route: ActivatedRoute,
+    private router: Router,
     private projectService: ProjectService,
     private filterService: FilterService
   ) {
@@ -41,28 +46,37 @@ export class PortfolioComponent implements OnInit{
 
   ngOnInit(): void {
     this.getProjects();
+    this.route.queryParams.subscribe(params => {
+      if (params['tags']) {
+        // Parse tag slugs from query parameters
+        this.tagSlugs = params['tags'].split(',');
+        this.applyFilters();
+      }
+    });
   }
 
   handleTagFilterChange(tagFilters: Tag[]): void {
-    console.log('Tag Filters:', tagFilters); // Log the received tag filters
-    this.tagFilters = tagFilters;
+    console.log(tagFilters);
+    this.tagSlugs = tagFilters.map(tag => tag.slug);
+    // Update query parameters with tag slugs
+    this.router.navigate([], { queryParams: { tags: this.tagSlugs.join(',') } });
     this.applyFilters();
   }
 
 
-applyFilters(): void {
-  if (this.tagFilters.length > 0) {
-    this.projects = this.projectService.getProjects().filter(project =>
-      this.tagFilters.every(filterTag =>
-        project.tags.some(tag => tag.id === filterTag.id)
-      )
-    );
-  } else {
-    this.projects = this.projectService.getProjects();
-  }
-}
+  applyFilters(): void {
+    if (this.tagSlugs.length > 0) {
+      // Filter projects based on tag slugs
+      this.projects = this.projectService.getProjects().filter(project =>
+        this.tagSlugs.every(slug => project.tags.some(tag => tag.slug === slug))
+      );
+    } else {
+      this.projects = this.projectService.getProjects();
+    }
+  }  
 
   clearFilters(): void {
-    this.filterService.clearFilters();
+    this.tagSlugs = [];
+    this.router.navigate([], { relativeTo: this.route });
   }
 }
