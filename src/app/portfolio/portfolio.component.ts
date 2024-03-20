@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
@@ -7,6 +7,7 @@ import { Project } from '../../models/project';
 import { ProjectService } from '../services/project.service';
 
 import { Tag } from '../../models/tag';
+import { TagService } from '../services/tag.service';
 
 import { FilterComponent } from '../filter/filter.component';
 import { FilterService } from '../services/filter.service';
@@ -19,18 +20,20 @@ import { FilterService } from '../services/filter.service';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit{
-  isCollapsed: boolean = true;
+  isCollapsed: boolean = false;
   projects: Project[] = [];
   tags: Tag[] = [];
   tagFilters: Tag[] = [];
   tagSlugs: string[] = []; // Array to store tag slugs
 
+  @ViewChild(FilterComponent) filterComponent!: FilterComponent;
 
   constructor(
     private titleService: Title,
     private route: ActivatedRoute,
     private router: Router,
     private projectService: ProjectService,
+    private tagService: TagService,
     private filterService: FilterService
   ) {
     this.titleService.setTitle('Everest Shi - Developer Portfolio');
@@ -48,14 +51,24 @@ export class PortfolioComponent implements OnInit{
       if (params['tags']) {
         // Parse tag slugs from query parameters
         this.tagSlugs = params['tags'].split(',');
+        // Ensure that tags are populated before filtering
+        this.tags = this.tagService.getTags();
+        // Fetch corresponding Tag objects based on slugs and populate tagFilters array
+        this.tagFilters = this.tags.filter(tag => this.tagSlugs.includes(tag.slug));
         this.applyFilters();
       }
     });
   }
 
+  toggleFilter(): void {
+    this.isCollapsed = !this.isCollapsed;
+    console.log('isCollapsed:', this.isCollapsed);
+  }
+
   handleTagFilterChange(tagFilters: Tag[]): void {
-    console.log(tagFilters);
+    this.tagFilters = tagFilters;
     this.tagSlugs = tagFilters.map(tag => tag.slug);
+
     // Update query parameters with tag slugs
     this.router.navigate([], { queryParams: { tags: this.tagSlugs.join(',') } });
     this.applyFilters();
@@ -73,6 +86,21 @@ export class PortfolioComponent implements OnInit{
     }
   }  
 
+  removeTagFilter(tag: Tag): void {
+    // Remove the clicked tag from the tagFilters array
+    this.tagFilters = this.tagFilters.filter(t => t !== tag);
+
+    this.updateSelectedTags();
+  
+    // Update query parameters with the updated tag filters
+    this.tagSlugs = this.tagFilters.map(t => t.slug);
+    this.router.navigate([], { queryParams: { tags: this.tagSlugs.join(',') } });
+    
+    // Apply filters with the updated tag filters
+    this.applyFilters();
+  }
+  
+
   clearFilters(): void {
     this.tagSlugs = [];
     this.router.navigate([], { relativeTo: this.route });
@@ -82,4 +110,13 @@ export class PortfolioComponent implements OnInit{
     this.router.navigate(['/developer-portfolio', project.id]);
   }
   
+  isLast(tag: Tag, array: Tag[]): boolean {
+    return array.indexOf(tag) === array.length - 1;
+  }
+
+  updateSelectedTags(): void {
+    if (this.filterComponent) {
+      this.filterComponent.updateSelectedTags(this.tagFilters);
+    }
+  }
 }

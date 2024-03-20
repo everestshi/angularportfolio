@@ -8,13 +8,3 @@
     </ng-container>
   </ng-container>
 </section>
-
-<section class="selected-tags">
-  <!-- Selected tag list -->
-  <div
-    *ngFor="let selectedTag of selectedTags"
-    (click)="setTagFilter(selectedTag)"
-  >
-    <div>{{ selectedTag?.name }}</div>
-  </div>
-</section>
