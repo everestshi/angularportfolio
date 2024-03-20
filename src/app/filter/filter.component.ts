@@ -35,12 +35,16 @@ export class FilterComponent {
     } else {
       this.selectedTags.push(tag);
     }
-
     // Emit the selected tags
     this.newTagFilterEvent.emit(this.selectedTags);
   }
 
   getUniqueCategories(): string[] {
     return [...new Set(this.tags.map(tag => tag.category))];
+  }
+
+  updateSelectedTags(tags: Tag[]): void {
+    this.selectedTags = [...tags]; // Update selected tags
+    this.newTagFilterEvent.emit(this.selectedTags); // Notify parent component
   }
 }

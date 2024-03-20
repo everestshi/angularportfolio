@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    name: 'MOVIE APP - React Movie Application',
+    name: 'TMDB - React Movie Application',
     summary:
       'A React-driven app that allows for a comfortable user experience, comparable to any streaming website.',
     description: "The Movie App delivers real-time data on popular, top-rated, now playing, and upcoming films. With tech-enhanced features like favoriting, watch later, search functionality and beyond, it's your personalized cinematic journey - redefined.",
@@ -86,5 +86,4 @@ export const PROJECTS: Project[] = [
       TAGS.find(tag => tag.slug === 'htmlcss')!
     ],
   },
-  // Add other projects similarly
 ];
