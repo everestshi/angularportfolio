@@ -15,6 +15,7 @@ export class FilterComponent {
  
   tags: Tag[] = [];
   selectedTags: Tag[] = [];
+  
 
   getTags(): void {
     this.tags = this.tagService.getTags();
@@ -34,8 +35,12 @@ export class FilterComponent {
     } else {
       this.selectedTags.push(tag);
     }
-    
+
     // Emit the selected tags
     this.newTagFilterEvent.emit(this.selectedTags);
+  }
+
+  getUniqueCategories(): string[] {
+    return [...new Set(this.tags.map(tag => tag.category))];
   }
 }

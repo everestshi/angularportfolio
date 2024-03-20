@@ -11,12 +11,10 @@ import { Tag } from '../../models/tag';
 import { FilterComponent } from '../filter/filter.component';
 import { FilterService } from '../services/filter.service';
 
-import { ProjectCardComponent } from '../project-card/project-card.component';
-
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, FilterComponent, ProjectCardComponent],
+  imports: [CommonModule, FilterComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
@@ -79,4 +77,9 @@ export class PortfolioComponent implements OnInit{
     this.tagSlugs = [];
     this.router.navigate([], { relativeTo: this.route });
   }
+
+  navigateToProjectDetail(project: Project): void {
+    this.router.navigate(['/developer-portfolio', project.id]);
+  }
+  
 }
