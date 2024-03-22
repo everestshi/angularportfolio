@@ -1,11 +1,9 @@
 nav {
-    background-color: #333; /* Background color of the navbar */
-    width: 100vw; /* Stretch navbar across the entire width of the page */
+    background-color: #111; /* Background color of the navbar */
+    width: 100%; /* Stretch navbar across the entire width of the page */
     top: 0; /* Align navbar to the top of the page */
     left: 0; /* Align navbar to the left of the page */
     z-index: 1000; /* Ensure navbar stays above other content */
-    padding: 10px 15px; /* Add padding to the links */
-    margin-bottom: 20px; /* Add margin to the bottom of the navbar */
 }
   
   .nav-container {
@@ -14,7 +12,10 @@ nav {
     display: flex; /* Use flexbox layout */
     align-items: center; /* Align items vertically */
     justify-content: space-between;
-    max-width: 1300px;
+    max-width: 1040px;
+    width: 90%;
+    height: 62px;
+    padding: 0 5%;
   }
   
   .logo img {

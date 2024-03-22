@@ -1,10 +1,12 @@
 <section class="filter-section">
-  <ng-container *ngFor="let category of getUniqueCategories()">
+  <div *ngFor="let category of getUniqueCategories()" class="category-container">
     <h3>{{ category }}</h3>
-    <ng-container *ngFor="let tag of tags">
-      <div *ngIf="tag.category === category" (click)="setTagFilter(tag)">
-        <div>{{ tag.name }}</div>
-      </div>
-    </ng-container>
-  </ng-container>
+    <div class="tags-container">
+      <ng-container *ngFor="let tag of tags">
+        <div *ngIf="tag.category === category" class="tag-item" (click)="setTagFilter(tag)">
+          {{ tag.name }}
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </section>
