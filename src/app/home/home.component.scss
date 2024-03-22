@@ -1,0 +1,164 @@
+.my-home-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-img {
+    max-width: 75%;
+    position: relative;
+    height: auto;
+}
+
+#dancer-img, #coder-img {
+    position: absolute;
+    opacity: 0;
+}
+
+.home-img, .home-code, .home-dance {
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+.home-dance{
+    width: 40%;
+    height: 20%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 5%;
+    text-align: left;
+    position: absolute;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        display: none;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+
+.home-code{
+    width: 40%;
+    height: 20%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 5%;
+    text-align: right;
+    position: absolute;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        display: none;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+
+
+@media (min-width: 375px) {
+    .home-dance{
+    
+        h1 {
+            font-size: 1.7rem;
+        }
+    }
+    
+    .home-code{
+
+        h1 {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+@media (min-width: 420px) {
+    .home-dance{
+    
+        h1 {
+            font-size: 1.95rem;
+        }
+    }
+    
+    .home-code{
+
+        h1 {
+            font-size: 1.95rem;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    img {
+        max-width: 60%;
+    }
+
+    .home-dance{
+    
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+    
+    .home-code{
+
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .home-dance{
+    
+        h1 {
+            font-size: 3.1rem;
+        }
+    }
+    
+    .home-code{
+
+        h1 {
+            font-size: 3.1rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .home-dance{
+        width: 30%;
+        height: 44%;
+    
+        h1 {
+            font-size: 3.1rem;
+        }
+        p {
+            display: block;
+        }
+    }
+    
+    .home-code{
+        width: 30%;
+        height: 44%;
+
+        h1 {
+            font-size: 3.1rem;
+        }
+
+        p {
+            display: block;
+        }
+
+    }
+}
+
+@media (min-width: 1200px) {
+}

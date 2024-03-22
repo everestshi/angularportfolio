@@ -1,0 +1,18 @@
+.filter-section {
+    display: flex;
+  }
+  
+  .category-container {
+    margin-right: 20px; /* Adjust as needed */
+  }
+  
+  .tags-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px; /* Adjust as needed */
+  }
+  
+  .tag-item {
+    cursor: pointer;
+  }
+  

@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="home-container" (mouseenter)="moveImages($event)" (mouseleave)="resetImages()">
+    <div id="my-home-picture" class="my-home-picture">
+        <a href="/dance">
+            <div id="home-dance" class="home-dance">
+                <div class="home-dance-desc">
+                    <h1>dancer</h1>
+                    <p>Versatile dancer, choreographer, director, and teacher with expertise in film, TV, commercials, and stage performances.</p>
+                </div>
+            </div>
+        </a>
+        <a href="/code">
+            <div id="home-code" class="home-code">
+                <div class="home-code-desc">
+                    <h1>&lt;coder&gt;</h1>
+                    <p>Full stack junior developer with a drive for excellence and a hunger for knowledge.</p>
+                </div>
+            </div>
+        </a>
+        <img id="home-img" class="home-img" src="../../assets/images/homepage-main.png" alt="Picture of me.">
+        <img id="dancer-img" class="home-img" src="../../assets/images/homepage-dancer.png" alt="Colorful picture of me.">
+        <img id="coder-img" class="home-img" src="../../assets/images/homepage-coder.png" alt="Colorful picture of me.">
+    </div>
+</div>
