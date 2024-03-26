@@ -7,8 +7,10 @@ export interface Project {
     summary: string;
     description: string;
     link: string | null;
+    carouselImages: string[];
     images: string[];
     category_id: number | null;
     category: Category | null;
     tags: Tag[];
+    featured: boolean;
 }

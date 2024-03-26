@@ -2,23 +2,22 @@
   <header>
     <button type="button" (click)="goBack()">Back</button>
   </header>
-  <section class="project-detail">
-    <img
+  <div class="projects-grid">
+    <div class="box title-box"> {{project?.name}}</div>
+    <div class="box description-box"> {{ project?.description}} </div>
+    <div class="box link-box"><a href="http://example.com">Visit Website</a></div>
+    <div class="box tech-box">
+      <div *ngIf="project?.tags?.length">
+        Tags:
+        <span *ngFor="let tag of project?.tags">
+          {{ tag.name }}
+        </span>
+      </div>
+    </div>
+    <div class="box carousel-box">  <img
       *ngIf="project?.images"
       [src]="'assets/images/' + project?.images"
       alt="Image of {{ project?.name }}"
-    />
-    <div>
-      <h2>{{ project?.name | uppercase }}</h2>
-      <div>{{ project?.description }}</div>
-    </div>
-  </section>
-  <footer>
-    <div *ngIf="project?.tags?.length">
-      Tags:
-      <span *ngFor="let tag of project?.tags">
-        {{ tag.name }}
-      </span>
-    </div>
-  </footer>
+    /></div>
+  </div>
 </article>

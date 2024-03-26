@@ -5,7 +5,12 @@
         <img src="../../assets/images/unbound-logo-whitebg.png" alt="Logo">
       </div>
     </a>
-    <ul class="nav-list">
+    <div class="hamburger" (click)="toggleNav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="nav-list" [class.active-menu]="navVisible">
       <li class="nav-item">
         <a routerLink="/home" routerLinkActive="active">Home</a>
       </li>
