@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { ProjectService } from '../services/project.service';
 import { Project } from '../../models/project';
+import { Location } from '@angular/common';
+
 
 import { CodeCarouselComponent } from '../code-carousel/code-carousel.component';
 import { RouterOutlet } from '@angular/router';
@@ -21,7 +23,8 @@ import { RouterOutlet } from '@angular/router';
 export class CodeComponent implements OnInit{
   constructor(
     private titleService: Title, 
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private location: Location
     ) {
     this.titleService.setTitle('Everest Shi - Code');
     this.projectService.getProjects();
@@ -36,5 +39,9 @@ export class CodeComponent implements OnInit{
   getProjects(): void {
     this.projects = this.projectService.getProjects();
     this.slides = this.projects.map(project => ({ name: project.name }));
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

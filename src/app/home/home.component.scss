@@ -1,3 +1,5 @@
+
+
 .my-home-picture {
     display: flex;
     justify-content: center;
@@ -14,6 +16,7 @@
 #dancer-img, #coder-img {
     position: absolute;
     opacity: 0;
+    transition: transform 0.3s ease;
 }
 
 .home-img, .home-code, .home-dance {
@@ -30,6 +33,7 @@
     left: 5%;
     text-align: left;
     position: absolute;
+    z-index: 10;
 
     h1 {
         font-size: 1.5rem;
@@ -51,6 +55,7 @@
     right: 5%;
     text-align: right;
     position: absolute;
+    z-index: 10;
 
     h1 {
         font-size: 1.5rem;

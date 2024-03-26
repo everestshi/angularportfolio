@@ -1,27 +1,58 @@
 <div class="about-code-container">
-    <div class="name-title-box">
-        <div class="name">Everest Shi</div>
-        <div class="title">Junior Software Developer</div>
+    <header>
+        <button type="button" (click)="goBack()">Back</button>
+      </header>
+  <div class="name">Everest Shi</div>
+  <div class="title">
+    I'm a Junior Software Developer based in Vancouver, Canada.
+  </div>
+  <div class="description-box">
+    <div class="description">
+      I enjoy creating innovative solutions across full-stack web development.
+      Known for promoting collaborative effort and consistent excellence, I'm driven by the
+      desire to make a positive impact through technology. Let's connect and
+      create something remarkable together.
     </div>
-    <div class="description-box">
-        <div class="heading">Personal Description</div>
-        <div class="description">Your personal description here...</div>
-    </div>
-    <div class="skills-box">
-        <div class="heading">Technical Skills</div>
-        <ul class="skills-list">
-            <li>Technical Skill 1</li>
-            <li>Technical Skill 2</li>
-            <!-- Add more skills as needed -->
-        </ul>
-    </div>
-    <div class="project-carousel-box">
-        <app-code-carousel 
+  </div>
+  <div class="skills-box">
+    <div class="heading">Technical Skills</div>
+    <ul class="skills-list">
+      <li>Technical Skill 1</li>
+      <li>Technical Skill 2</li>
+      <!-- Add more skills as needed -->
+    </ul>
+  </div>
+  <div class="project-carousel-box">
+    <!--
+<app-code-carousel 
             [indicatorsVisible]="true"
             [animationSpeed]="500"
             [slides]="slides"
             [autoPlay]="true"
             [autoPlaySpeed]="2000">
         </app-code-carousel>
+        -->
+  </div>
+  <div class="code-right-side">
+    <div class="social-links">
+      <a class="link-box" href="https://github.com/everestshi">
+        <img src="../../assets/icons/github.svg" alt="GitHub Logo">
+        <div class="link-text">G<br>i<br>t<br>H<br>u<br>b</div>
+      </a>
+      <a class="link-box" href="https://www.linkedin.com/in/everestshi/">
+        <img src="../../assets/icons/linkedin.svg" alt="LinkedIn Logo">
+        <div class="link-text">L<br>i<br>n<br>k<br>e<br>d<br>I<br>n</div>
+      </a>
+      <a class="link-box" href="https://www.instagram.com/mountainscandance/">
+        <img src="../../assets/icons/instagram.svg" alt="Instagram Logo">
+        <div class="link-text">I<br>n<br>s<br>t<br>a<br>g<br>r<br>a<br>m</div>
+      </a>
+      <a class="link-box" href="/">
+        <img src="../../assets/icons/mail.svg" alt="Email Logo">
+        <div class="link-text">E<br>m<br>a<br>i<br>l</div>
+      </a>
     </div>
+    <button class="portfolio-button">Portfolio</button>
+  </div>
+  
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { ActivatedRoute, RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { Location } from '@angular/common';
@@ -14,8 +14,15 @@ import { RouterModule } from '@angular/router';
 })
 
 export class NavComponent {
+  navVisible = false;
+
   constructor(
     private route: ActivatedRoute,
   ) {}
+
+  toggleNav() {
+    this.navVisible = !this.navVisible;
+  }
+
   
 }
