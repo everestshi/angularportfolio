@@ -1,45 +1,49 @@
-<div>
-  <!-- Display selected tags -->
-  <section class="selected-tags">
-    <!-- Selected tag list -->
-    <div
-      *ngFor="let selectedTag of tagFilters"
-      (click)="removeTagFilter(selectedTag)"
-    >
-      <div class="filter-tags" [style.background-color]="selectedTag.color">{{ selectedTag?.name }}</div>
-    </div>
-  </section>
+<section class="portfolio-container">
   <div>
-    <button class="filter-btn" (click)="toggleFilter()">Filter</button>
-  </div>
-  <div>
-    <div *ngIf="isCollapsed">
-      <app-filter
-        [tagFilters]="tagFilters"
-        (newTagFilterEvent)="handleTagFilterChange($event)"
-      ></app-filter>
-    </div>
-  </div>
-</div>
-
-<div class="card-container">
-  <div *ngFor="let project of projects">
-    <div class="card" style="max-width: 250px; min-width: 250px">
-      <div class="card-body">
-        <h5 class="card-title">{{ project.name }}</h5>
-        <p class="card-text">{{ project.summary }}</p>
-        <button class="card-btn" (click)="navigateToProjectDetail(project)">
-          View More
-        </button>
+    <!-- Display selected tags -->
+    <section class="selected-tags">
+      <!-- Selected tag list -->
+      <div
+        *ngFor="let selectedTag of tagFilters"
+        (click)="removeTagFilter(selectedTag)"
+      >
+        <div class="filter-tags" [style.background-color]="selectedTag.color">{{ selectedTag?.name }}</div>
       </div>
-
-      <div class="card-footer">
-        <div *ngFor="let tag of project.tags">
-          <div class="card-tags" [style.background-color]="tag.color">
-            {{ tag?.name }}
-          </div>
+    </section>
+    <div class="filter-section">
+      <div>
+        <button class="filter-btn" (click)="toggleFilter()">Filter</button>
+      </div>
+      <div>
+        <div *ngIf="isCollapsed">
+          <app-filter
+            [tagFilters]="tagFilters"
+            (newTagFilterEvent)="handleTagFilterChange($event)"
+          ></app-filter>
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  <div class="card-container">
+    <div *ngFor="let project of projects">
+      <div class="card" style="max-width: 250px; min-width: 250px">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <p class="card-text">{{ project.summary }}</p>
+          <button class="card-btn" (click)="navigateToProjectDetail(project)">
+            View More
+          </button>
+        </div>
+  
+        <div class="card-footer">
+          <div *ngFor="let tag of project.tags">
+            <div class="card-tags" [style.background-color]="tag.color">
+              {{ tag?.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>
