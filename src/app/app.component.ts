@@ -6,6 +6,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { ContactComponent } from './contact/contact.component';
     NavComponent,
     HomeComponent,
     PortfolioComponent,
-    ContactComponent],
+    ContactComponent,
+  FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

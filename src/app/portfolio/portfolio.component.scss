@@ -1,8 +1,19 @@
+.portfolio-container{
+  margin-top: 20px;
+}
+
 .card-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .card {
