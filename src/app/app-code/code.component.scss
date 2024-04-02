@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column; /* Display items vertically */
   position: relative;
-  margin-top: 20px;
   width: 100%;
 }
 
@@ -18,6 +17,10 @@
   flex-direction: column; /* Align contents vertically */
   justify-content: center; /* Center items vertically */
   align-items: center; /* Center items horizontally */
+}
+
+.project-carousel-box {
+  padding: 0;
 }
 
 /* No need for position:relative for individual boxes */
@@ -127,6 +130,7 @@
       2px 0px 0 #000, 1px 2px 0 #000, -1px 2px 0 #000, 1px -2px 0 #000,
       -1px -2px 0 #000, 2px 1px 0 #000, -2px 1px 0 #000, 2px -1px 0 #000,
       -2px -1px 0 #000;
+    z-index: 10;
   }
 
   .description-box {
@@ -172,7 +176,7 @@
     width: 25%; /* Adjust width as needed */
     position: absolute;
     left: 50%; /* Position from the center */
-    z-index: -1;
+    z-index: 1;
   }
 
   .carousel-heading {

@@ -14,13 +14,16 @@ import { ProjectService } from '../services/project.service';
   styleUrl: './project.component.scss'
 })
 export class ProjectComponent {
+  project?: Project;
+  currentImageIndex = 0; // Carousel current image index
+  private autoScrollInterval?: number; // To hold the interval ID
+
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private location: Location
   ) { }
 
-  project?: Project;
   getProject(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.project = this.projectService.GetProjectById(id);
@@ -28,9 +31,27 @@ export class ProjectComponent {
 
   ngOnInit(): void {
     this.getProject();
+    this.startAutoScroll();
+  }
+
+  startAutoScroll(): void {
+    if (typeof window !== 'undefined') {
+      this.autoScrollInterval = window.setInterval(() => {
+        if (this.project?.images) {
+          this.currentImageIndex = (this.currentImageIndex + 1) % this.project.images.length;
+        }
+      }, 3000); // Change image every 3000ms (3 seconds)
+    }
   }
 
   goBack(): void {
     this.location.back();
   }
+  ngOnDestroy(): void {
+    // Clear the interval when the component is destroyed
+    if (this.autoScrollInterval) {
+      clearInterval(this.autoScrollInterval);
+    }
+  }
+  
 }

@@ -1,5 +1,20 @@
 main {
-    max-width: 1024px;
+    width: 100%;
     min-width: 320px;
     margin: 0 auto;
+    flex: 1;
 }
+
+.content {
+    max-width: 1024px;
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }

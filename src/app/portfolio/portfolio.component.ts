@@ -12,15 +12,17 @@ import { TagService } from '../services/tag.service';
 import { FilterComponent } from '../filter/filter.component';
 import { FilterService } from '../services/filter.service';
 
+import { RotatingCarouselComponent } from '../rotating-carousel/rotating-carousel.component';
+
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, FilterComponent],
+  imports: [CommonModule, FilterComponent, RotatingCarouselComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit{
-  isCollapsed: boolean = false;
+  isCollapsed: boolean = true;
   projects: Project[] = [];
   tags: Tag[] = [];
   tagFilters: Tag[] = [];

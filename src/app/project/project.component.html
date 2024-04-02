@@ -3,10 +3,9 @@
     <button type="button" (click)="goBack()">Back</button>
   </header>
   <div class="projects-grid">
-    <div class="box title-box"> {{project?.name}}</div>
-    <div class="box description-box"> {{ project?.description}} </div>
-    <div class="box link-box"><a href="http://example.com">Visit Website</a></div>
-    <div class="box tech-box">
+    <div class="box title-box">{{ project?.name }}</div>
+    <div class="box description-box">{{ project?.description }}</div>
+    <div class="box link-box">
       <div *ngIf="project?.tags?.length">
         Tags:
         <span *ngFor="let tag of project?.tags">
@@ -14,10 +13,25 @@
         </span>
       </div>
     </div>
-    <div class="box carousel-box">  <img
-      *ngIf="project?.images"
-      [src]="'assets/images/' + project?.images"
-      alt="Image of {{ project?.name }}"
-    /></div>
+    <div class="box tech-box">
+      <a href="http://example.com">Visit Website</a>
+    </div>
+    <div class="box carousel-box">
+      <div class="carousel-container">
+        <div
+          class="carousel-images"
+          [ngStyle]="{
+            transform: 'translateX(-' + currentImageIndex * 100 + '%)'
+          }"
+        >
+          <img
+            *ngFor="let image of project?.images; let i = index"
+            [src]="image"
+            [alt]="'Image ' + (i + 1) + ' of project ' + project?.name!"
+            class="carousel-image"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </article>

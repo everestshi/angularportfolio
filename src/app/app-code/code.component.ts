@@ -31,6 +31,8 @@ export class CodeComponent implements OnInit{
   }
 
   projects: Project[] = [];
+  featuredProjects: Project[] = [];
+
   slides: any[] = [{}];
 
   ngOnInit(): void {
@@ -38,10 +40,32 @@ export class CodeComponent implements OnInit{
   }
   getProjects(): void {
     this.projects = this.projectService.getProjects();
-    this.slides = this.projects.map(project => ({ name: project.name }));
+    this.featuredProjects = this.projects.filter((project) => project.featured === true);
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  pauseAutoPlay() {
+    const carousel = document.querySelector('.slides') as HTMLElement;
+    if (carousel) {
+      carousel.classList.add('paused');
+    }
+  }
+
+  resumeAutoPlay() {
+    const carousel = document.querySelector('.slides') as HTMLElement;
+    if (carousel) {
+      carousel.classList.remove('paused');
+    }
+  }
+
+  onMouseEnter() {
+    this.pauseAutoPlay();
+  }
+
+  onMouseLeave() {
+    this.resumeAutoPlay();
   }
 }
