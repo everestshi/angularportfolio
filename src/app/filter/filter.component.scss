@@ -4,18 +4,9 @@
 }
 
 .category-container {
-  flex: 0 0 calc(33.33% - 10px); /* Set width for three columns with spacing */
+  flex: 0 0 25%; /* Adjust width as needed */
   padding: 10px; /* Add padding for spacing */
   box-sizing: border-box; /* Ensure padding is included in the width */
-}
-
-.category-container:nth-child(3n+1) {
-  margin-right: 10px; /* Add right margin for spacing */
-}
-
-.category-container:nth-child(n+3) {
-  flex: 1 0 100%; /* Make the last two containers occupy full width */
-  margin-right: 0; /* Remove right margin for the last two containers */
 }
 
 .category-container h3 {

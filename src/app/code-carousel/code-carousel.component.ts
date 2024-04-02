@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-code-carousel',
@@ -8,14 +10,18 @@ import { CommonModule } from '@angular/common';
   templateUrl: './code-carousel.component.html',
   styleUrl: './code-carousel.component.scss',
 })
+
 export class CodeCarouselComponent implements OnInit {
   @Input() slides: any[] = [];
   @Input() indicatorsVisible = true;
   @Input() animationSpeed = 500;
   @Input() autoPlay = true;
-  @Input() autoPlaySpeed = 3000;
+  @Input() autoPlaySpeed = 5000;
   currentSlide = 0;
   hidden = false;
+  autoPlayInterval: any;
+
+  constructor(private router: Router) { }
 
   next() {
     let currentSlide = (this.currentSlide + 1) % this.slides.length;
@@ -43,4 +49,11 @@ export class CodeCarouselComponent implements OnInit {
       }, this.autoPlaySpeed);
     }
   }
+
+    // Method to navigate to project detail
+    navigateToProjectDetail(project: any): void {
+      console.log('Clicked project:', project);
+      // Navigate to project detail page using project ID
+      this.router.navigate(['/developer-portfolio', project.id]);
+    }
 }

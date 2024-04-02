@@ -21,15 +21,16 @@
     </ul>
   </div>
   <div class="project-carousel-box">
-    <!--
-<app-code-carousel 
-            [indicatorsVisible]="true"
-            [animationSpeed]="500"
-            [slides]="slides"
-            [autoPlay]="true"
-            [autoPlaySpeed]="2000">
-        </app-code-carousel>
-        -->
+    <app-code-carousel
+      [indicatorsVisible]="true"
+      [animationSpeed]="500"
+      [slides]="featuredProjects"
+      [autoPlay]="true"
+      [autoPlaySpeed]="10000"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()"
+    >
+    </app-code-carousel>
   </div>
   <div class="code-right-side">
     <div class="social-links">

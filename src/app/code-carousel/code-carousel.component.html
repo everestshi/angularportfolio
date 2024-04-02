@@ -1,22 +1,19 @@
-<div class="slides">
+<div class="slide-container">
+  <div class="slides">
     <div
       class="slide"
       *ngIf="slides[currentSlide]"
       [ngStyle]="{
-        'opacity': hidden ? '0' : '1',
-        'transition': 'opacity ' + animationSpeed + 'ms ease-in-out'
+        opacity: hidden ? '0' : '1',
+        transition: 'opacity ' + animationSpeed + 'ms ease-in-out'
       }"
+      (click)="navigateToProjectDetail(slides[currentSlide])"
     >
-      {{ slides[currentSlide].name }}
-    </div>
-  
-    <div id="indicators" *ngIf="indicatorsVisible">
-      <div
-        *ngFor="let slide of slides; let i = index"
-        (click)="jumpToSlide(i)"
-        class="indicator"
-        [ngClass]="{ active: i === currentSlide }"
-      ></div>
+      <img
+        [src]="slides[currentSlide].carouselImages[0]"
+        alt="{{ slides[currentSlide].name }}"
+      />
+      <div class="overlay">{{ slides[currentSlide].name }}</div>
     </div>
   </div>
-  
+</div>
