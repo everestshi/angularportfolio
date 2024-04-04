@@ -29,7 +29,7 @@
   </div>
   
   <div class="card-container">
-    <div *ngFor="let project of projects">
+    <div *ngFor="let project of projects" class="each-card-container">
 
       <div class="card">
         <div class="img-container">
@@ -39,18 +39,25 @@
           class="card-img-top">
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{ project.name }}</h5>
-          <p class="card-text">{{ project.summary }}</p>
-          <button class="card-btn" (click)="navigateToProjectDetail(project)">
-            View More
-          </button>
-        </div>
-  
-        <div class="card-footer">
-          <div *ngFor="let tag of project.tags">
-            <div class="card-tags" [style.background-color]="tag.color">
-              {{ tag?.name }}
+          <div class="project-heading">
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-subtitle">{{ project.subtitle }}</p>
+          </div>
+          <div class="project-desc-container">
+            <p class="card-text">{{ project.summary }}</p>
+          </div>
+          <div class="card-footer">
+            <div *ngFor="let tag of project.tags">
+              <div class="card-tags" [style.background-color]="tag.color">
+                {{ tag?.name }}
+              </div>
             </div>
+          </div>
+          <div class="project-links">
+            <button class="card-btn" (click)="navigateToProjectDetail(project)">
+              View More
+            </button>
+            <span>Nav Links Here</span>
           </div>
         </div>
       </div>

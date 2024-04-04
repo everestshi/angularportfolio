@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    name: 'TMDB - The Movie App',
+    name: 'TMDB',
     subtitle: 'Front End React Movie Application',
     summary:
       'A React-driven app that allows for a comfortable user experience, comparable to any streaming website.',
