@@ -3,6 +3,9 @@ main {
     min-width: 320px;
     margin: 0 auto;
     flex: 1;
+    background-image: url('../assets/images/background-images/japanese_canvas.jpeg');
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 .content {

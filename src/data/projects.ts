@@ -8,11 +8,20 @@ import { TAGS } from './tags';
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    name: 'SIPS CAFE - Software Systems Design & Development',
+    name: 'SIPS Cafe',
+    subtitle: 'Full Stack Web Application with Software Systems Design & Development',
     summary:
       'A responsive website backed by .NET and SQL that integrates application design, agile management, and UML.',
     description: 'SIPS Cafe offers businesses a space to showcase their products and allow customers to order online with administrative security, user account creation/login, custom profile page, menu display, ordering system, payment integration, location, ratings, and many more features for a seamless user experience.',
-    link: null,
+    features: [
+      'Administrative security',
+      'User account creation/login',
+      'Custom profile pages',
+      'Menu display and ordering system',
+      'Payment integration',
+    ],
+    ghlink: null,
+    weblink: null,
     carouselImages: ["../../assets/images/project-media/SIPS/carousel-sips.png"],
     images: ["../../assets/images/project-media/SIPS/main-img.png"],
     category_id: 3,
@@ -27,11 +36,20 @@ export const PROJECTS: Project[] = [
   {
     id: 2,
   
-    name: 'MYTHIC MONSTERS - JavaScript Game',
+    name: 'Mythic Monsters',
+    subtitle: 'Front End Javascript Game',
     summary:
       'Explore a world where you capture and train Mythic Monsters to gain experience and battle to become the ultimate Tamer.',
     description: 'A fully function javascript game that features a fully functional battle system, NPCs, Mythic Monster stats, a storyline, and a custom world to explore.',
-    link: null,
+    features: [
+      'Fully functional battle system',
+      'NPC interactions',
+      'In-depth Mythic Monster stats',
+      'Engaging storyline',
+      'Expansive custom world'
+    ],
+    ghlink: null,
+    weblink: null,
     carouselImages: ["../../assets/images/project-media/mythic-monsters/carousel-mm.png"],
     images: ["../../assets/images/project-media/mythic-monsters/main-img.png",
     "../../assets/images/project-media/mythic-monsters/mm-2.png",
@@ -50,11 +68,19 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    name: 'TMDB - React Movie Application',
+    name: 'TMDB - The Movie App',
+    subtitle: 'Front End React Movie Application',
     summary:
       'A React-driven app that allows for a comfortable user experience, comparable to any streaming website.',
     description: "The Movie App delivers real-time data on popular, top-rated, now playing, and upcoming films. With tech-enhanced features like favoriting, watch later, search functionality and beyond, it's your personalized cinematic journey - redefined.",
-    link: null,
+    features: [
+      'Real-time data on films',
+      'Favoriting and watch later features',
+      'Search functionality',
+      'User-friendly interface',
+    ],
+    ghlink: null,
+    weblink: null,
     carouselImages: ["../../assets/images/project-media/TMDB/tmdb-carousel.png"],
     images: ["../../assets/images/project-media/TMDB/main-img.png"],
     category_id: 2,
@@ -68,11 +94,20 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 4,
-    name: 'PIECE NEWS - News Site Homepage',
+    name: 'PIECE News',
+    subtitle: 'Front End News Site Homepage',
     summary:
       'A news site homepage that boasts a clean, responsive design, a custom layout, and a visually stunning UI.',
     description: 'A tech-forward news site homepage that is powered by SASS for modular styles, Swiper for seamless navigation, and responsive imaging for optimal visuals. Explore audio and video integrations, coupled with a responsive navbar and seamlessly integrated animations.',
-    link: null,
+    features: [
+      'Responsive design',
+      'Custom layouts',
+      'Visually stunning UI',
+      'Modular styles with SASS',
+      'Interactive slideshows with Swiper',
+    ],
+    ghlink: null,
+    weblink: null,
     carouselImages: ["../../assets/images/project-media/piece-news/news-carousel.png"],
     images: ["../../assets/images/project-media/piece-news/main-img.png"],
     category_id: 2,
@@ -86,11 +121,18 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    name: 'ZIRVESTI - Express Billing Application',
+    name: 'ZIRVESTI',
+    subtitle: 'Full Stack Express Billing Application',
     summary:
       'A sleek billing application focusing on the use of Node.js, Express, and MongoDB.',
     description: 'Using both relation and unstructured NoSQL databases, Zirvesti allows users to manipulate clients, products, users, and invoices. The application also features a login system with authentication and authorization, user settings and permissions, and other useful functionality.',
-    link: null,
+    features: [
+      'Responsive design',
+      'Login system with authentication',
+      'Database management for clients, products, users, and invoices'
+    ],
+    ghlink: null,
+    weblink: null,
     carouselImages: ["../../assets/images/project-media/express-billing/carousel-zirvesti.png"],
     images: ["../../assets/images/project-media/express-billing/main-img.png"],
     category_id: 3,

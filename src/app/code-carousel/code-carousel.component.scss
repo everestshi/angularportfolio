@@ -13,18 +13,18 @@
       width: 100%;
       height: 100%;
       position: relative;
-      display: flex; /* Use flexbox */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
+      overflow: hidden; /* This will hide any part of the image that exceeds the container */
+
 
 
       img {
-        max-width: auto; /* Ensures the image doesn't exceed the width of its container */
-        max-height: 100%; /* Ensures the image doesn't exceed the height of its container */
-        width: auto; /* Allow the image width to adjust */
-        height: 100%; /* Take up the full height of the container */
+        min-height: 100%; /* Ensures the image doesn't exceed the height of its container */
+        width: 100%; /* Allow the image width to adjust */
+        height: auto; /* Take up the full height of the container */
         margin: 0 auto; /* Center the image horizontally */
         display: block; /* Ensure the image is a block element */
+        object-fit: cover; /* Cover the container without distorting the image */
+        object-position: center top; /* Horizontally centered, aligned to the top */
       }
     }
 

@@ -13,12 +13,21 @@
     </div>
   </div>
   <div class="skills-box">
-    <div class="heading">Technical Skills</div>
-    <ul class="skills-list">
-      <li>Technical Skill 1</li>
-      <li>Technical Skill 2</li>
-      <!-- Add more skills as needed -->
-    </ul>
+    <div class="skills-heading">
+      <span>T</span>
+      <span>E</span>
+      <span>C</span>
+      <span>H</span>
+      <span>N</span>
+      <span>O</span>
+      <span>L</span>
+      <span>O</span>
+      <span>G</span>
+      <span>Y</span>
+    </div>
+    <div class="skills-list">
+      <span *ngFor="let tag of tags" [style.background-color]="tag.color">{{ tag.name }}</span>
+    </div>
   </div>
   <div class="project-carousel-box">
     <app-code-carousel

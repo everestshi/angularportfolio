@@ -4,9 +4,12 @@ import { Tag } from './tag';
 export interface Project {
     id: number;
     name: string;
+    subtitle: string;
     summary: string;
     description: string;
-    link: string | null;
+    features: string[];
+    ghlink: string | null;
+    weblink: string | null;
     carouselImages: string[];
     images: string[];
     category_id: number | null;
