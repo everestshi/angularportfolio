@@ -3,6 +3,7 @@
   flex-direction: column; /* Display items vertically */
   position: relative;
   width: 100%;
+  margin: 20px 0;
 }
 
 /* Remove position:relative from individual boxes */
@@ -31,23 +32,28 @@
 
 .title {
   font-size: 0.75rem;
-  color: #666;
 }
 
 .description-box .description {
   font-size: 0.5rem;
-  color: #666;
 }
 
-.skills-list {
-  list-style-type: none;
-  padding: 0;
+.skills-box .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* Adjust the gap as needed */
+  justify-content: center;
 }
 
-.skills-list li {
-  font-size: 0.5rem;
-  color: #666;
-  margin-bottom: 5px;
+.skills-heading {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.skills-box .skills-list span {
+  padding: 2px 4px; /* Adjust padding as needed */
+  border-radius: 5px; /* Optional: for rounded corners */
+  color: white;
 }
 
 .project-carousel-box {
@@ -142,35 +148,59 @@
     align-items: flex-start;
     padding: 0;
     border: none;
+    background-color: transparent;
   }
 
   .title {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
 
   .description {
-    font-size: 16px;
-    color: #666;
+    font-size: 0.6rem;
   }
 
   .skills-box {
     position: absolute;
     top: 19.5rem;
-    left: 5rem;
+    left: 3.2rem;
     width: 35%;
-  }
-
-  .skills-list {
-    list-style-type: none;
+    display: flex;
     padding: 0;
+    border: none;
+    flex-direction: row;
+    background-color: transparent;
   }
 
-  .skills-list li {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 5px;
+  .skills-box .skills-list {
+    justify-content: flex-start;
+    margin-left: 10px;
   }
+
+  .skills-heading {
+    text-align: left;
+    font-size: 0.9rem;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .skills-heading span {
+    display: block;
+    font-weight: bold; /* Make the text bold */
+  }
+  
+  .skills-box .skills-list span {
+    position: relative;
+    font-size: 0.7rem;
+    border-radius: 0;
+    padding: 5px 10px 7px 10px; /* Adjust padding as needed */
+    margin-right: 5px; /* Space between tags */
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 5px) 50%, 100% 100%, 0% 100%);
+
+  }
+
+  
 
   .project-carousel-box {
     width: 25%; /* Adjust width as needed */

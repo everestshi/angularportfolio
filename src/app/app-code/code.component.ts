@@ -5,6 +5,8 @@ import { ProjectService } from '../services/project.service';
 import { Project } from '../../models/project';
 import { Location } from '@angular/common';
 
+import { Tag } from '../../models/tag';
+import { TagService } from '../services/tag.service';
 
 import { CodeCarouselComponent } from '../code-carousel/code-carousel.component';
 import { RouterOutlet } from '@angular/router';
@@ -21,13 +23,16 @@ import { RouterOutlet } from '@angular/router';
 })
 
 export class CodeComponent implements OnInit{
+  tags: Tag[] = [];
   constructor(
     private titleService: Title, 
     private projectService: ProjectService,
+    private tagService: TagService,
     private location: Location
     ) {
     this.titleService.setTitle('Everest Shi - Code');
     this.projectService.getProjects();
+    this.tagService.getTags();
   }
 
   projects: Project[] = [];
@@ -37,7 +42,13 @@ export class CodeComponent implements OnInit{
 
   ngOnInit(): void {
     this.getProjects();
+    this.getTags();
   }
+
+  getTags(): void {
+    this.tags = this.tagService.getTags();
+  }
+
   getProjects(): void {
     this.projects = this.projectService.getProjects();
     this.featuredProjects = this.projects.filter((project) => project.featured === true);

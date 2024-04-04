@@ -30,11 +30,14 @@
   
   <div class="card-container">
     <div *ngFor="let project of projects">
-      <div class="card" style="max-width: 250px; min-width: 250px">
-        <img *ngIf="project.images && project.images.length > 0" 
-        [src]="project.images[0]" 
-        alt="{{ project.name }}" 
-        class="card-img-top">
+
+      <div class="card">
+        <div class="img-container">
+          <img *ngIf="project.images && project.images.length > 0" 
+          [src]="project.images[0]" 
+          alt="{{ project.name }}" 
+          class="card-img-top">
+        </div>
         <div class="card-body">
           <h5 class="card-title">{{ project.name }}</h5>
           <p class="card-text">{{ project.summary }}</p>
@@ -51,6 +54,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>  
 </section>

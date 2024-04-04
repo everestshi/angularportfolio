@@ -2,7 +2,7 @@
 <div id="wrapper">
   <div id="image" class="carousel-container">
     <ng-container *ngFor="let project of projects; let i = index">
-      <div class="image i{{ i + 1 }}" *ngIf="project.featured">
+      <div class="image i{{ i + 1 }}" *ngIf="project.featured" (click)="navigateToProjectDetail(project)">
         <img [src]="project.images[0]" [alt]="project.name" />
         <div class="content">
           <h3>{{ project.name }}</h3>

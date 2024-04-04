@@ -1,24 +1,21 @@
 .filter-section {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* Display items vertically */
 }
 
 .category-container {
-  flex: 0 0 25%; /* Adjust width as needed */
-  padding: 10px; /* Add padding for spacing */
-  box-sizing: border-box; /* Ensure padding is included in the width */
-}
-
-.category-container h3 {
-  margin: 0; /* Remove default margin */
+  h3 {
+    padding-top: 10px;
+    margin: 0;
+  }
 }
 
 .tags-container {
-  margin-top: 5px; /* Adjust margin as needed */
+  display: flex; /* Use flexbox */
+  flex-wrap: wrap; /* Allow tags to wrap to the next row */
 }
 
 .tag-item {
   cursor: pointer;
-  margin-right: 5px; /* Adjust margin as needed */
   padding: 5px 10px; /* Adjust padding as needed */
 }
