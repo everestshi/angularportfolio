@@ -16,7 +16,11 @@ import { ProjectService } from '../services/project.service';
 export class ProjectComponent {
   project?: Project;
   currentImageIndex = 0; // Carousel current image index
+  reversedImageIndex = 0; // For the reverse carousel
+
   private autoScrollInterval?: number; // To hold the interval ID
+  reversedImages: string[] = []; // Holds the reversed array of images
+
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +31,7 @@ export class ProjectComponent {
   getProject(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.project = this.projectService.GetProjectById(id);
+    this.reversedImageIndex = this.project?.images?.length ? this.project.images.length - 1 : 0;
   }
 
   ngOnInit(): void {
@@ -34,15 +39,25 @@ export class ProjectComponent {
     this.startAutoScroll();
   }
 
-  startAutoScroll(): void {
+  startAutoScroll() {
     if (typeof window !== 'undefined') {
       this.autoScrollInterval = window.setInterval(() => {
         if (this.project?.images) {
           this.currentImageIndex = (this.currentImageIndex + 1) % this.project.images.length;
+  
+          // Adjust reversedImageIndex in the opposite direction
+          this.reversedImageIndex = this.reversedImageIndex - 1;
+          if (this.reversedImageIndex < 0) {
+            this.reversedImageIndex = this.project.images.length - 1; // Loop back to the last image
+          }
+  
+          // Ensure reversedImageIndex doesn't exceed the last index
+          this.reversedImageIndex %= this.project.images.length;
         }
       }, 3000); // Change image every 3000ms (3 seconds)
     }
   }
+  
 
   goBack(): void {
     this.location.back();
