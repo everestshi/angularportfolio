@@ -48,8 +48,8 @@ export const PROJECTS: Project[] = [
       'Engaging storyline',
       'Expansive custom world'
     ],
-    ghlink: null,
-    weblink: null,
+    ghlink: "https://github.com/everestshi/mythicmonstersgame",
+    weblink: "https://mythicmonstersgame.vercel.app/",
     carouselImages: ["../../assets/images/project-media/mythic-monsters/carousel-mm.png"],
     images: ["../../assets/images/project-media/mythic-monsters/main-img.png",
     "../../assets/images/project-media/mythic-monsters/mm-2.png",
