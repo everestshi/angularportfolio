@@ -9,11 +9,12 @@
       }"
       (click)="navigateToProjectDetail(slides[currentSlide])"
     >
+      <div class="overlay">{{ slides[currentSlide].name }}</div>
+
       <img
         [src]="slides[currentSlide].carouselImages[0]"
         alt="{{ slides[currentSlide].name }}"
       />
-      <div class="overlay">{{ slides[currentSlide].name }}</div>
     </div>
   </div>
 </div>
