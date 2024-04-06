@@ -1,5 +1,5 @@
 <div class="about-code-container">
-  <button type="button" class="back-btn" (click)="goBack()">Back</button>
+  <!--<button type="button" class="back-btn" (click)="goBack()">Back</button>-->
   <div class="name">Everest Shi</div>
   <div class="description-box">
     <div class="title">
@@ -29,6 +29,8 @@
       <span *ngFor="let tag of tags" [style.background-color]="tag.color">{{ tag.name }}</span>
     </div>
   </div>
+  <a href="/developer-portfolio" class="mobile-portfolio-button">Explore my Portfolio</a>
+  <div class="mobile-featured-title">Featured Projects</div>
   <div class="project-carousel-box">
     <app-code-carousel
       [indicatorsVisible]="true"
