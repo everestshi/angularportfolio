@@ -1,208 +1,438 @@
-h1 {
-  font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
-  font-size: 30px;
-  text-align: center;
-}
-h3 {
-  font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
-  font-size: 8px;
-  font-style: italic;
-  color: #000000;
-  text-align: center;
+.rotating-container {
+  display: none;
 }
 
-p {
-  font-size: 5px;
-  color: black;
-}
+@media (min-width: 768px) {
 
-#wrapper {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  position: relative;
-}
-
-#wrapper {
-  perspective: 2500;
-  -webkit-perspective: 2500;
-  width: 100%;
-  margin: 50px auto 0 auto;
-  perspective-origin: 50% 150px;
-  -webkit-perspective-origin: 50% 150px;
-  transition: perspective, 1s;
-  -o-transition: -o-perspective, 1s;
-  -moz-transition: -moz-perspective, 1s;
-  -webkit-transition: -webkit-perspective, 1s;
-}
-
-#image:hover {
-  animation-play-state: paused;
-  -o-animation-play-state: paused;
-  -moz-animation-play-state: paused;
-  -webkit-animation-play-state: paused;
-}
-
-@keyframes spin {
-  from {
-    transform: rotateY(0);
-    -o-transform: rotateY(0);
-    -ms-transform: rotateY(0);
-    -moz-transform: rotateY(0);
-    -webkit-transform: rotateY(0);
+  .rotating-container {
+    display: block;
   }
-  to {
-    transform: rotateY(-360deg);
-    -o-transform: rotateY(-360deg);
-    -ms-transform: rotateY(-360deg);
-    -moz-transform: rotateY(-360deg);
-    -webkit-transform: rotateY(-360deg);
-  }
-}
 
-#image {
-  margin: 0 auto;
-  height: 100%;
-  width: 33vw;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  animation: spin 24s infinite linear;
-  -moz-animation: spin 24s infinite linear;
-  -o-animation: spin 24s infinite linear;
-  -webkit-animation: spin 24s infinite linear;
-}
-
-.image {
-  position: absolute;
-  width: 250px;
-  aspect-ratio: 1 / 0.6;
-  border-radius: 25px;
-  background-color: rgba(0, 0, 0, 0.6);
-  text-align: center;
-  display: flex;
-  flex-direction: column; 
-  justify-content: flex-start;
-  align-items: center;
-  cursor: pointer;
-}
-
-.image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease-in-out;
-}
-
-.image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 2px solid white;
-    border-radius: inherit;
-    opacity: 0;
-    transition: 0.4s ease-in-out;
-}
-
-.image h3, .image p {
-    width: 100%; /* Ensures the text does not exceed the image width */
-    position: absolute;
-    opacity: 0; /* Text is fully transparent initially */
-    transition: opacity 0.5s ease; /* Smooth transition for the text */
+  h1 {
+    font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
+    font-size: 30px;
     text-align: center;
-    color: white;
+  }
+  h3 {
+    font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
+    font-size: 8px;
+    font-style: italic;
+    color: #000000;
+    text-align: center;
   }
   
+  p {
+    font-size: 5px;
+    color: black;
+  }
   
-  .image:hover img {
-    opacity: 0.2;/* Make the image semi-transparent on hover */
+  #wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+  }
+  
+  #wrapper {
+    perspective: 2500;
+    -webkit-perspective: 2500;
+    width: 100%;
+    margin: 50px auto 0 auto;
+    perspective-origin: 50% 150px;
+    -webkit-perspective-origin: 50% 150px;
+    transition: perspective, 1s;
+    -o-transition: -o-perspective, 1s;
+    -moz-transition: -moz-perspective, 1s;
+    -webkit-transition: -webkit-perspective, 1s;
+  }
+  
+  #image:hover {
+    animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotateY(0);
+      -o-transform: rotateY(0);
+      -ms-transform: rotateY(0);
+      -moz-transform: rotateY(0);
+      -webkit-transform: rotateY(0);
+    }
+    to {
+      transform: rotateY(-360deg);
+      -o-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      -moz-transform: rotateY(-360deg);
+      -webkit-transform: rotateY(-360deg);
+    }
+  }
+  
+  #image {
+    margin: 0 auto;
+    height: 100%;
+    width: 33vw;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    animation: spin 24s infinite linear;
+    -moz-animation: spin 24s infinite linear;
+    -o-animation: spin 24s infinite linear;
+    -webkit-animation: spin 24s infinite linear;
+  }
+  
+  .image {
+    position: absolute;
+    width: 200px;
+    aspect-ratio: 1 / 0.6;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s ease-in-out;
+  }
+  
+  .image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid white;
+      border-radius: inherit;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+  }
+  
+  .image h3, .image p {
+      width: 100%; /* Ensures the text does not exceed the image width */
+      position: absolute;
+      opacity: 0; /* Text is fully transparent initially */
+      transition: opacity 0.5s ease; /* Smooth transition for the text */
+      text-align: center;
+      color: white;
+    }
+    
+    
+    .image:hover img {
+      opacity: 0.2;/* Make the image semi-transparent on hover */
+    }
+  
+    .image:hover::after {
+      opacity: 1;
+      inset: 15px;
+      background-color: rgba(0, 0, 0, 0.5);;
+      z-index: 1;
+    }
+    
+    .image:hover h3, .image:hover p {
+      opacity: 1; /* Make the text fully opaque (visible) on hover */
+      z-index: 10;
+    }
+  
+  /* Center the text exactly in the middle of .image */
+  .image h3 {
+      top: 30%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      width: 60%;
+    }
+    
+    .image p {
+      top: 50%; /* Adjust depending on your h3 size for perfect alignment */
+      transform: translate(-50%, -50%);
+      left: 50%;
+      width: 70%;
+    }
+    
+  
+  #image > .i1 {
+    transform: translateZ(300px);
+    -moz-transform: translateZ(300px);
+    -o-transform: translateZ(300px);
+    -ms-transform: translateZ(300px);
+    -webkit-transform: translateZ(300px);
+  }
+  #image > .i2 {
+    transform: rotateY(45deg) translateZ(300px);
+    -moz-transform: rotateY(45deg) translateZ(300px);
+    -o-transform: rotateY(45deg) translateZ(300px);
+    -ms-transform: rotateY(45deg) translateZ(300px);
+    -webkit-transform: rotateY(45deg) translateZ(300px);
+  }
+  #image > .i3 {
+    transform: rotateY(90deg) translateZ(300px);
+    -moz-transform: rotateY(90deg) translateZ(300px);
+    -o-transform: rotateY(90deg) translateZ(300px);
+    -ms-transform: rotateY(90deg) translateZ(300px);
+    -webkit-transform: rotateY(90deg) translateZ(300px);
+  }
+  #image > .i4 {
+    transform: rotateY(135deg) translateZ(300px);
+    -moz-transform: rotateY(135deg) translateZ(300px);
+    -o-transform: rotateY(135deg) translateZ(300px);
+    -ms-transform: rotateY(135deg) translateZ(300px);
+    -webkit-transform: rotateY(135deg) translateZ(300px);
+  }
+  #image > .i5 {
+    transform: rotateY(180deg) translateZ(300px);
+    -moz-transform: rotateY(180deg) translateZ(300px);
+    -o-transform: rotateY(180deg) translateZ(300px);
+    -ms-transform: rotateY(180deg) translateZ(300px);
+    -webkit-transform: rotateY(180deg) translateZ(300px);
+  }
+  #image > .i6 {
+    transform: rotateY(225deg) translateZ(300px);
+    -moz-transform: rotateY(225deg) translateZ(300px);
+    -o-transform: rotateY(225deg) translateZ(300px);
+    -ms-transform: rotateY(225deg) translateZ(300px);
+    -webkit-transform: rotateY(225deg) translateZ(300px);
+  }
+  #image > .i7 {
+    transform: rotateY(270deg) translateZ(300px);
+    -moz-transform: rotateY(270deg) translateZ(300px);
+    -o-transform: rotateY(270deg) translateZ(300px);
+    -ms-transform: rotateY(270deg) translateZ(300px);
+    -webkit-transform: rotateY(270deg) translateZ(300px);
+  }
+  #image > .i8 {
+    transform: rotateY(315deg) translateZ(300px);
+    -moz-transform: rotateY(315deg) translateZ(300px);
+    -o-transform: rotateY(315deg) translateZ(300px);
+    -ms-transform: rotateY(315deg) translateZ(300px);
+    -webkit-transform: rotateY(315deg) translateZ(300px);
+  }
+  
+  img {
+    border-radius: 25px;
+    max-width: 100%;
+  }
+  
+}
+
+
+@media (min-width: 1024px) {
+  .rotating-container {
+    display: block;
   }
 
-  .image:hover::after {
-    opacity: 1;
-    inset: 15px;
-    background-color: rgba(0, 0, 0, 0.5);;
-    z-index: 1;
+  h1 {
+    font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+  }
+  h3 {
+    font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
+    font-size: 8px;
+    font-style: italic;
+    color: #000000;
+    text-align: center;
   }
   
-  .image:hover h3, .image:hover p {
-    opacity: 1; /* Make the text fully opaque (visible) on hover */
-    z-index: 10;
-  }
-
-/* Center the text exactly in the middle of .image */
-.image h3 {
-    top: 30%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    width: 60%;
+  p {
+    font-size: 5px;
+    color: black;
   }
   
-  .image p {
-    top: 50%; /* Adjust depending on your h3 size for perfect alignment */
-    transform: translate(-50%, -50%);
-    left: 50%;
-    width: 70%;
+  #wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
   }
   
-
-#image > .i1 {
-  transform: translateZ(400px);
-  -moz-transform: translateZ(400px);
-  -o-transform: translateZ(400px);
-  -ms-transform: translateZ(400px);
-  -webkit-transform: translateZ(400px);
-}
-#image > .i2 {
-  transform: rotateY(45deg) translateZ(400px);
-  -moz-transform: rotateY(45deg) translateZ(400px);
-  -o-transform: rotateY(45deg) translateZ(400px);
-  -ms-transform: rotateY(45deg) translateZ(400px);
-  -webkit-transform: rotateY(45deg) translateZ(400px);
-}
-#image > .i3 {
-  transform: rotateY(90deg) translateZ(400px);
-  -moz-transform: rotateY(90deg) translateZ(400px);
-  -o-transform: rotateY(90deg) translateZ(400px);
-  -ms-transform: rotateY(90deg) translateZ(400px);
-  -webkit-transform: rotateY(90deg) translateZ(400px);
-}
-#image > .i4 {
-  transform: rotateY(135deg) translateZ(400px);
-  -moz-transform: rotateY(135deg) translateZ(400px);
-  -o-transform: rotateY(135deg) translateZ(400px);
-  -ms-transform: rotateY(135deg) translateZ(400px);
-  -webkit-transform: rotateY(135deg) translateZ(400px);
-}
-#image > .i5 {
-  transform: rotateY(180deg) translateZ(400px);
-  -moz-transform: rotateY(180deg) translateZ(400px);
-  -o-transform: rotateY(180deg) translateZ(400px);
-  -ms-transform: rotateY(180deg) translateZ(400px);
-  -webkit-transform: rotateY(180deg) translateZ(400px);
-}
-#image > .i6 {
-  transform: rotateY(225deg) translateZ(400px);
-  -moz-transform: rotateY(225deg) translateZ(400px);
-  -o-transform: rotateY(225deg) translateZ(400px);
-  -ms-transform: rotateY(225deg) translateZ(400px);
-  -webkit-transform: rotateY(225deg) translateZ(400px);
-}
-#image > .i7 {
-  transform: rotateY(270deg) translateZ(400px);
-  -moz-transform: rotateY(270deg) translateZ(400px);
-  -o-transform: rotateY(270deg) translateZ(400px);
-  -ms-transform: rotateY(270deg) translateZ(400px);
-  -webkit-transform: rotateY(270deg) translateZ(400px);
-}
-#image > .i8 {
-  transform: rotateY(315deg) translateZ(400px);
-  -moz-transform: rotateY(315deg) translateZ(400px);
-  -o-transform: rotateY(315deg) translateZ(400px);
-  -ms-transform: rotateY(315deg) translateZ(400px);
-  -webkit-transform: rotateY(315deg) translateZ(400px);
-}
-
-img {
-  border-radius: 25px;
-  max-width: 100%;
+  #wrapper {
+    perspective: 2500;
+    -webkit-perspective: 2500;
+    width: 100%;
+    margin: 50px auto 0 auto;
+    perspective-origin: 50% 150px;
+    -webkit-perspective-origin: 50% 150px;
+    transition: perspective, 1s;
+    -o-transition: -o-perspective, 1s;
+    -moz-transition: -moz-perspective, 1s;
+    -webkit-transition: -webkit-perspective, 1s;
+  }
+  
+  #image:hover {
+    animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotateY(0);
+      -o-transform: rotateY(0);
+      -ms-transform: rotateY(0);
+      -moz-transform: rotateY(0);
+      -webkit-transform: rotateY(0);
+    }
+    to {
+      transform: rotateY(-360deg);
+      -o-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      -moz-transform: rotateY(-360deg);
+      -webkit-transform: rotateY(-360deg);
+    }
+  }
+  
+  #image {
+    margin: 0 auto;
+    height: 100%;
+    width: 33vw;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    animation: spin 24s infinite linear;
+    -moz-animation: spin 24s infinite linear;
+    -o-animation: spin 24s infinite linear;
+    -webkit-animation: spin 24s infinite linear;
+  }
+  
+  .image {
+    position: absolute;
+    width: 300px;
+    aspect-ratio: 1 / 0.6;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s ease-in-out;
+  }
+  
+  .image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid white;
+      border-radius: inherit;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+  }
+  
+  .image h3, .image p {
+      width: 100%; /* Ensures the text does not exceed the image width */
+      position: absolute;
+      opacity: 0; /* Text is fully transparent initially */
+      transition: opacity 0.5s ease; /* Smooth transition for the text */
+      text-align: center;
+      color: white;
+    }
+    
+    
+    .image:hover img {
+      opacity: 0.2;/* Make the image semi-transparent on hover */
+    }
+  
+    .image:hover::after {
+      opacity: 1;
+      inset: 15px;
+      background-color: rgba(0, 0, 0, 0.5);;
+      z-index: 1;
+    }
+    
+    .image:hover h3, .image:hover p {
+      opacity: 1; /* Make the text fully opaque (visible) on hover */
+      z-index: 10;
+    }
+  
+  /* Center the text exactly in the middle of .image */
+  .image h3 {
+      top: 20%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      width: 60%;
+      font-size: 1.4rem;
+    }
+    
+    .image p {
+      top: 60%; /* Adjust depending on your h3 size for perfect alignment */
+      transform: translate(-50%, -50%);
+      left: 50%;
+      width: 70%;
+      font-size: 0.5rem;
+    }
+    
+  
+  #image > .i1 {
+    transform: translateZ(420px);
+    -moz-transform: translateZ(420px);
+    -o-transform: translateZ(420px);
+    -ms-transform: translateZ(420px);
+    -webkit-transform: translateZ(420px);
+  }
+  #image > .i2 {
+    transform: rotateY(45deg) translateZ(420px);
+    -moz-transform: rotateY(45deg) translateZ(420px);
+    -o-transform: rotateY(45deg) translateZ(420px);
+    -ms-transform: rotateY(45deg) translateZ(420px);
+    -webkit-transform: rotateY(45deg) translateZ(420px);
+  }
+  #image > .i3 {
+    transform: rotateY(90deg) translateZ(420px);
+    -moz-transform: rotateY(90deg) translateZ(420px);
+    -o-transform: rotateY(90deg) translateZ(420px);
+    -ms-transform: rotateY(90deg) translateZ(420px);
+    -webkit-transform: rotateY(90deg) translateZ(420px);
+  }
+  #image > .i4 {
+    transform: rotateY(135deg) translateZ(420px);
+    -moz-transform: rotateY(135deg) translateZ(420px);
+    -o-transform: rotateY(135deg) translateZ(420px);
+    -ms-transform: rotateY(135deg) translateZ(420px);
+    -webkit-transform: rotateY(135deg) translateZ(420px);
+  }
+  #image > .i5 {
+    transform: rotateY(180deg) translateZ(420px);
+    -moz-transform: rotateY(180deg) translateZ(420px);
+    -o-transform: rotateY(180deg) translateZ(420px);
+    -ms-transform: rotateY(180deg) translateZ(420px);
+    -webkit-transform: rotateY(180deg) translateZ(420px);
+  }
+  #image > .i6 {
+    transform: rotateY(225deg) translateZ(420px);
+    -moz-transform: rotateY(225deg) translateZ(420px);
+    -o-transform: rotateY(225deg) translateZ(420px);
+    -ms-transform: rotateY(225deg) translateZ(420px);
+    -webkit-transform: rotateY(225deg) translateZ(420px);
+  }
+  #image > .i7 {
+    transform: rotateY(270deg) translateZ(420px);
+    -moz-transform: rotateY(270deg) translateZ(420px);
+    -o-transform: rotateY(270deg) translateZ(420px);
+    -ms-transform: rotateY(270deg) translateZ(420px);
+    -webkit-transform: rotateY(270deg) translateZ(420px);
+  }
+  #image > .i8 {
+    transform: rotateY(315deg) translateZ(420px);
+    -moz-transform: rotateY(315deg) translateZ(420px);
+    -o-transform: rotateY(315deg) translateZ(420px);
+    -ms-transform: rotateY(315deg) translateZ(420px);
+    -webkit-transform: rotateY(315deg) translateZ(420px);
+  }
+  
+  img {
+    border-radius: 25px;
+    max-width: 100%;
+  }
 }

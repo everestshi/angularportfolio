@@ -3,7 +3,7 @@
     <h3>{{ category }}</h3>
     <div class="tags-container">
       <ng-container *ngFor="let tag of tags">
-        <div *ngIf="tag.category === category" class="tag-item" (click)="setTagFilter(tag)">
+        <div *ngIf="tag.category === category" class="tag-item" (click)="setTagFilter(tag)"[style.background-color]="tag.color">
           {{ tag.name }}
         </div>
       </ng-container>

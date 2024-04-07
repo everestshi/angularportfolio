@@ -13,26 +13,55 @@
   font-size: 2rem;
 }
 
-.title-container::before,
+.filter-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: 1px solid #F28C28;
+  transition: background-color 0.3s ease-in-out;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: #F28C28;
+    color: white;
+  }
+
+}
+
+.selected-tags {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+/*.title-container::before,
 .title-container::after {
-  content: ""; /* Required for pseudo-elements */
-  position: absolute; /* Position the lines */
-  height: 1px; /* Set line height */
-  background-color: black; /* Color of the lines */
-  width: calc(50% - 150px); /* Calculate width to extend to edges of window */
+  content: ""; 
+  position: absolute; 
+  height: 1px; 
+  background-color: black; 
+  width: calc(50% - 150px); 
 }
 
 .title-container::before {
-  left: 2vw; /* Align to left edge of window */
+  left: 2vw; 
 }
 
 .title-container::after {
-  right: 2vw; /* Align to right edge of window */
-}
+  right: 2vw; 
+}*/
 
 .portfolio-container {
-  margin-top: 200px;
+  margin-top: 20px;
 }
+
 .filter-section {
   display: flex;
   align-items: center;
@@ -57,34 +86,33 @@
     color: white;
 
     .card {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 1rem;
       align-items: center;
 
       .img-container {
-        grid-area: 1 / 1 / -1 / 8;
         position: relative;
-        padding: 3rem 0;
+        padding: 0 0 1rem 0;
+        display: flex;
+        justify-content: center;
       }
       .card-img-top {
         height: auto;
         width: 100%; /* Makes the image's width adjust to the container's width */
+        max-width: 450px;
       }
 
       .card-body {
-        padding: 1rem 1rem 0 0;
-        grid-column: 5 / -1;
-        grid-area: 1 / 7 / -1 / -1;
-        text-align: end;
+        text-align: center;
         height: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
         justify-content: space-between;
         border-inline-end: 0.2rem solid;
         border-block-start: 0.2rem solid;
         border-image-source: radial-gradient(circle at right top, #F28C28, transparent 30%);
         border-image-slice: 1;
+        max-width: 500px;
 
         .project-heading{
           z-index: 5;
@@ -92,14 +120,15 @@
 
         h5 {
           margin: 0;
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
 
         .project-desc-container {
-          padding: 2rem;
+          padding: 0.5rem;
           z-index: 5;
           color: black;
           background-image: url('../../assets/images/background-images/light.jpeg');
+          margin: 0 1rem 1rem 1rem;
         }
       }
 
@@ -128,7 +157,7 @@
       .card-footer {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: center;
 
         .card-tags {
           background-color: #6c757d;
@@ -159,6 +188,9 @@
 
         .external-links {
           gap: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           a {
             cursor: pointer;
             img {
@@ -172,13 +204,9 @@
     // Apply alternate styling to every other .card element
     &:nth-child(even) {
       .card {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1rem;
-        align-items: center;
+
 
         .img-container {
-          grid-area: 1 / 6 / -1 / -1;
           position: relative;
           padding: 1rem 0;
         }
@@ -188,66 +216,11 @@
         }
 
         .card-body {
-          grid-column: 1 / 9;
-          grid-area: 1 / 1 / -1 / 7;
-          text-align: start;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          padding: 1rem 0 0 1rem;
           border-inline-end: 0.2rem solid;
           border-block-start: 0.2rem solid;
           border-inline-start: 0.2rem solid;
           border-image-source: radial-gradient(circle at left top, #F28C28, transparent 30%);
           border-image-slice: 1;
-
-          h5 {
-            margin: 0;
-          }
-
-          .project-desc-container {
-            padding: 1rem;
-            z-index: 5;
-          }
-        }
-
-        .card-title {
-          font-size: 1.25rem;
-          margin-bottom: 10px;
-        }
-
-        .card-text {
-          margin-bottom: 15px;
-        }
-
-        .btn-primary {
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          padding: 8px 16px;
-          border-radius: 4px;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #0056b3;
-          }
-        }
-
-        .card-footer {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-
-          .card-tags {
-            background-color: #6c757d;
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-          }
         }
       }
     }
@@ -259,7 +232,644 @@
   color: #fff;
   padding: 4px 8px;
   border-radius: 4px;
-  margin-right: 8px;
-  margin-bottom: 8px;
   font-size: 0.9rem;
+}
+
+
+@media (min-width: 768px) {
+  .title-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px;
+  }
+  
+  .filter-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    width: 8rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid #F28C28;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+  
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  
+    &:hover {
+      background-color: #F28C28;
+      color: white;
+    }
+  
+  }
+
+  .projects-title {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+    font-size: 2rem;
+  }
+  
+  .title-container::before,
+  .title-container::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Position the lines */
+    height: 1px; /* Set line height */
+    background-color: black; /* Color of the lines */
+    width: calc(50% - 150px); /* Calculate width to extend to edges of window */
+  }
+  
+  .title-container::before {
+    left: 2vw; /* Align to left edge of window */
+  }
+  
+  .title-container::after {
+    right: 2vw; /* Align to right edge of window */
+  }
+  
+  .portfolio-container {
+    margin-top: 160px;
+  }
+  .filter-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    gap: 40px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  
+    .each-card-container {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1.5rem;
+      background-image: url('../../assets/images/background-images/black-background.jpeg');
+      background-size: cover;
+      color: white;
+  
+      .card {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        align-items: center;
+        
+  
+        .img-container {
+          grid-area: 1 / 1 / -1 / 8;
+          position: relative;
+          padding: 5rem 0;
+        }
+        .card-img-top {
+          height: auto;
+          width: 100%; /* Makes the image's width adjust to the container's width */
+        }
+  
+        .card-body {
+          padding: 1rem 1rem 0 0;
+          grid-column: 5 / -1;
+          grid-area: 1 / 7 / -1 / -1;
+          text-align: end;
+          align-items: flex-end;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border-inline-end: 0.2rem solid;
+          border-block-start: 0.2rem solid;
+          border-image-source: radial-gradient(circle at right top, #F28C28, transparent 30%);
+          border-image-slice: 1;
+  
+          .project-heading{
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            p{
+              font-size: 0.8rem;
+              font-style: italic;
+              width: 80%;
+            }
+          }
+  
+          h5 {
+            margin: 0;
+            font-size: 2.5rem;
+            width: 85%;
+          }
+  
+          .project-desc-container {
+            padding: 1rem;
+            margin: 0;
+            z-index: 5;
+            color: black;
+            background-image: url('../../assets/images/background-images/light.jpeg');
+            border-bottom-left-radius: 20%;
+            border-top-right-radius: 20%;
+          }
+        }
+  
+        .card-title {
+          font-size: 1.25rem;
+          margin-bottom: 10px;
+        }
+  
+        .card-text {
+          margin-bottom: 15px;
+        }
+  
+        .btn-primary {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+  
+        .card-footer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 5px;
+          width: 85%;
+  
+          .card-tags {
+            background-color: #6c757d;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin: 0;
+          }
+        }
+  
+        .project-links {
+          .card-btn{
+            background-color: #F28C28;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease-in-out;
+  
+            &:hover {
+              background-color: #6128f2;
+            }
+          }
+  
+          .external-links {
+            gap: 20px;
+            a {
+              cursor: pointer;
+              transition: transform 0.3s ease; /* Add a transition effect */
+
+              img {
+                filter: invert(1); /* Invert the colors to make the SVG white */
+              }
+            }
+            a:hover {
+              transform: scale(1.2); /* Increase the size on hover */
+            }
+          }
+        }
+  
+      }
+      // Apply alternate styling to every other .card element
+      &:nth-child(even) {
+        .card {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          gap: 1rem;
+          align-items: center;
+  
+          .img-container {
+            grid-area: 1 / 6 / -1 / -1;
+            position: relative;
+            padding: 5rem 0;
+          }
+          .card-img-top {
+            height: auto;
+            width: 100%; /* Makes the image's width adjust to the container's width */
+          }
+  
+          .card-body {
+            padding: 1rem 0 0 1rem;
+            grid-column: 1 / 9;
+            grid-area: 1 / 1 / -1 / 7;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: start;
+            align-items: flex-start;
+            border-inline-end: 0.2rem solid;
+            border-block-start: 0.2rem solid;
+            border-inline-start: 0.2rem solid;
+            border-image-source: radial-gradient(circle at left top, #F28C28, transparent 30%);
+            border-image-slice: 1;
+
+            .project-heading{
+              z-index: 5;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+  
+            h5 {
+              margin: 0;
+            }
+  
+            .project-desc-container {
+              padding: 1rem;
+              z-index: 5;
+              border-bottom-right-radius: 20%;
+              border-top-left-radius: 20%;
+            }
+          }
+  
+          .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+          }
+  
+          .card-text {
+            margin-bottom: 15px;
+          }
+  
+          .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+  
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+  
+          .card-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+  
+            .card-tags {
+              background-color: #6c757d;
+              color: #fff;
+              padding: 4px 8px;
+              border-radius: 4px;
+              margin: 0;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .filter-tags {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  .title-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px;
+  }
+
+  .filter-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    width: 10rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid #F28C28;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+  
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+  
+    &:hover {
+      background-color: #F28C28;
+      color: white;
+    }
+  
+  }
+  
+  .projects-title {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+    font-size: 3rem;
+  }
+  
+  .title-container::before,
+  .title-container::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Position the lines */
+    height: 1px; /* Set line height */
+    background-color: black; /* Color of the lines */
+    width: calc(50% - 225px); /* Calculate width to extend to edges of window */
+  }
+  
+  .title-container::before {
+    left: 2vw; /* Align to left edge of window */
+  }
+  
+  .title-container::after {
+    right: 2vw; /* Align to right edge of window */
+  }
+  
+  .portfolio-container {
+    margin-top: 220px;
+  }
+  .filter-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    gap: 40px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  
+    .each-card-container {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1.5rem;
+      background-image: url('../../assets/images/background-images/black-background.jpeg');
+      background-size: cover;
+      color: white;
+  
+      .card {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        align-items: center;
+  
+        .img-container {
+          grid-area: 1 / 1 / -1 / 8;
+          position: relative;
+          padding: 5rem 0;
+        }
+        .card-img-top {
+          height: auto;
+          width: 100%; /* Makes the image's width adjust to the container's width */
+        }
+  
+        .card-body {
+          padding: 1rem 1rem 0 0;
+          grid-column: 5 / -1;
+          grid-area: 1 / 7 / -1 / -1;
+          text-align: end;
+          align-items: flex-end;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border-inline-end: 0.2rem solid;
+          border-block-start: 0.2rem solid;
+          border-image-source: radial-gradient(circle at right top, #F28C28, transparent 30%);
+          border-image-slice: 1;
+  
+          .project-heading{
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            p{
+              font-size: 1rem;
+              font-style: italic;
+              width: 80%;
+            }
+          }
+  
+          h5 {
+            margin: 0;
+            font-size: 3rem;
+            width: 85%;
+          }
+  
+          .project-desc-container {
+            padding: 1rem;
+            margin: 0;
+            z-index: 5;
+            color: black;
+            background-image: url('../../assets/images/background-images/light.jpeg');
+          }
+        }
+  
+        .card-title {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+  
+        .card-text {
+          margin-bottom: 15px;
+        }
+  
+        .btn-primary {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+  
+        .card-footer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 10px;
+          width: 85%;
+  
+          .card-tags {
+            background-color: #6c757d;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            margin: 0;
+          }
+        }
+  
+        .project-links {
+          .card-btn{
+            background-color: #F28C28;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease-in-out;
+  
+            &:hover {
+              background-color: #6128f2;
+            }
+          }
+  
+          .external-links {
+            gap: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+              cursor: pointer;
+              img {
+                filter: invert(1); /* Invert the colors to make the SVG white */
+              }
+            }
+          }
+        }
+  
+      }
+      // Apply alternate styling to every other .card element
+      &:nth-child(even) {
+        .card {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          gap: 1rem;
+          align-items: center;
+  
+          .img-container {
+            grid-area: 1 / 6 / -1 / -1;
+            position: relative;
+            padding: 5rem 0;
+          }
+          .card-img-top {
+            height: auto;
+            width: 100%; /* Makes the image's width adjust to the container's width */
+          }
+  
+          .card-body {
+            padding: 1rem 0 0 1rem;
+            grid-column: 1 / 9;
+            grid-area: 1 / 1 / -1 / 7;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: start;
+            align-items: flex-start;
+            border-inline-end: 0.2rem solid;
+            border-block-start: 0.2rem solid;
+            border-inline-start: 0.2rem solid;
+            border-image-source: radial-gradient(circle at left top, #F28C28, transparent 30%);
+            border-image-slice: 1;
+
+            .project-heading{
+              z-index: 5;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+  
+            h5 {
+              margin: 0;
+            }
+  
+            .project-desc-container {
+              padding: 1rem;
+              z-index: 5;
+            }
+          }
+  
+          .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+          }
+  
+          .card-text {
+            margin-bottom: 15px;
+          }
+  
+          .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+  
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+  
+          .card-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+  
+            .card-tags {
+              background-color: #6c757d;
+              color: #fff;
+              padding: 4px 8px;
+              border-radius: 4px;
+              margin: 0;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .filter-tags {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    font-size: 0.9rem;
+  }
 }

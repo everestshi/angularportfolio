@@ -14,8 +14,8 @@
       </div>
     </section>
     <div class="filter-section">
-      <div>
-        <button class="filter-btn" (click)="toggleFilter()">Filter</button>
+      <div class="filter-btn" (click)="toggleFilter()">
+        <p>Filter</p>
       </div>
       <div>
         <div *ngIf="isCollapsed">
@@ -55,7 +55,7 @@
           </div>
           <div class="project-links">
             <button class="card-btn" (click)="navigateToProjectDetail(project)">
-              Project Details
+              View Project Details
             </button>
             <div class="external-links">
               <a class="github-link"> 

@@ -22,7 +22,7 @@ import { RotatingCarouselComponent } from '../rotating-carousel/rotating-carouse
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit{
-  isCollapsed: boolean = true;
+  isCollapsed: boolean = false;
   projects: Project[] = [];
   tags: Tag[] = [];
   tagFilters: Tag[] = [];

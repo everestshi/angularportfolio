@@ -22,6 +22,10 @@
   text-align: center;
 }
 
+.tech-description {
+  display: none;
+}
+
 .project-carousel-box {
   padding: 0;
   cursor: pointer;
@@ -34,6 +38,10 @@
   margin-bottom: 20px;
 }
 
+.title-top {
+  display: none;
+}
+
 .title {
   font-size: 0.85rem;
   margin-bottom: 10px;
@@ -42,7 +50,7 @@
 }
 
 .description-box {
-  background-image: url('../../assets/images/background-images/black-background.jpeg');
+  background-image: url("../../assets/images/background-images/black-background.jpeg");
   background-size: cover;
   color: white;
 }
@@ -71,43 +79,55 @@
   color: white;
 }
 
-.mobile-portfolio-button{
+.mobile-portfolio-button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 50px;
-  background-color: #F28C28;
+  background-color: #f28c28;
   border: 1px solid #000;
   font-size: 1rem;
   color: white;
   font-weight: 700;
   margin-bottom: 20px;
+  text-decoration: none;
+  text-align: center;
   cursor: pointer;
+}
+
+.mobile-port-text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-featured-title {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
+/*
 .mobile-portfolio-button::before,
 .mobile-portfolio-button::after {
-  content: ""; /* Required for pseudo-elements */
-  position: absolute; /* Position the lines */
-  height: 1px; /* Set line height */
-  background-color: black; /* Color of the lines */
-  width: calc(50% - 130px); /* Calculate width to extend to edges of window */
+  content: ""; 
+  position: absolute;
+  height: 1px;
+  z-index: -5;
+  background-color: black; 
+  width: calc(50%); 
 }
 
 .mobile-portfolio-button::before {
-  left: 2vw; /* Align to left edge of window */
+  left: 2vw; 
 }
 
 .mobile-portfolio-button::after {
-  right: 2vw; /* Align to right edge of window */
-}
+  right: 2vw; 
+}*/
 
 .project-carousel-box {
   width: 100%; /* Occupy full width on mobile */
@@ -127,7 +147,7 @@
 
 .code-right-side {
   width: 25%;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -169,12 +189,16 @@
     }
   }
 
-  .name {
+  .name-container{
     position: absolute;
-    top: 7rem;
+    top: 5.7rem;
     left: 3rem;
     background-color: none;
     border: none;
+    z-index: 10;
+  }
+
+  .name {
     font-size: 9vw;
     font-weight: bold;
     color: white; /* Set text color to white */
@@ -186,33 +210,47 @@
       -1px -2px 0 #000, 2px 1px 0 #000, -2px 1px 0 #000, 2px -1px 0 #000,
       -2px -1px 0 #000;
     z-index: 10;
+    margin: 0;
   }
 
   .description-box {
     position: absolute;
-    top: 12.5rem;
+    top: 11.2rem;
     left: 3.2rem;
     width: 35%;
     justify-content: left;
     align-items: flex-start;
+    text-align: left;
     padding: 0;
     border: none;
     background-color: transparent;
+    background-image: none;
+    color: black;
+  }
+
+  .title-top {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0 0 0 0.5rem;
+    border: none;
+    font-style: italic;
+    display: flex;
+    width: 75%;
   }
 
   .title {
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
+    display: none;
   }
 
   .description {
     font-size: 0.6rem;
     padding-left: 1.8rem;
+    display: none;
   }
 
   .skills-box {
     position: absolute;
-    top: 18.5rem;
+    top: 14.8rem;
     left: 3.2rem;
     width: 40%;
     display: flex;
@@ -220,39 +258,76 @@
     border: none;
     flex-direction: row;
     background-color: transparent;
-    align-items: flex-end;
+    align-items: stretch;
+  }
+
+  .tech-right-side{
+    margin-left: 1rem;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    width: 300px;
+  }
+
+  .tech-description{
+    text-align: left;
+    font-size: 0.75rem;
+    display: flex;
+    width: 240px;
   }
 
   .skills-box .skills-list {
     justify-content: flex-start;
-    margin-left: 1rem;
     border-top: 1px black solid;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
+    width: 300px;
   }
 
   .skills-heading {
-    text-align: left;
-    font-size: 1rem;
-    display: inline-block;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
     margin-bottom: 0;
+    padding: 8px;
+    background-image: url('../../assets/images/background-images/black-background.jpeg');
+    background-size: cover;
+    color: white;
   }
 
   .skills-heading span {
     display: block;
     font-weight: bold; /* Make the text bold */
   }
-  
+
   .skills-box .skills-list span {
     position: relative;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     border-radius: 0;
-    padding: 5px 10px 7px 10px; /* Adjust padding as needed */
-    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 5px) 50%, 100% 100%, 0% 100%);
-
+    padding: 5px 10px 5px 5px; /* Adjust padding as needed */
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      calc(100% - 5px) 50%,
+      100% 100%,
+      0% 100%
+    );
   }
 
-  
+  .mobile-portfolio-button {
+    display: none;
+  }
+
+  .mobile-port-text {
+    display: none;
+  }
+
+  .mobile-featured-title {
+    display: none;
+  }
 
   .project-carousel-box {
     width: 25%; /* Adjust width as needed */
@@ -288,6 +363,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    position: relative;
   }
 
   .link-box {
@@ -300,24 +376,18 @@
     z-index: 1;
   }
 
-  .link-box::before,
-  .link-box::after {
-    content: "";
+  .link-box-container {
+    position: relative;
+  }
+
+  .dotted-barrier {
     position: absolute;
-    top: 30px; /* Start from the top edge of the link-box */
-    height: 420px; /* Example large height to ensure it covers the distance to the portfolio button */
-    width: 1px; /* The thickness of your dotted line */
-    border-right: 1px dotted grey; /* Right line */
-  }
-
-  .link-box::before {
-    left: 0;
-    border-right: none;
-    border-left: 2px dotted grey; /* Left line */
-  }
-
-  .link-box::after {
-    right: 0;
+    top: 30px; /* Adjust as necessary */
+    bottom: 30px; /* Adjust based on the distance to the portfolio button */
+    width: 100%; /* The thickness of the dotted line */
+    height: 400px;
+    border-left: 1px dotted grey;
+    border-right: 2px dotted grey;
   }
 
   .link-box img {
@@ -329,7 +399,7 @@
     position: relative;
     font-size: 0.8em;
     overflow: hidden;
-    max-height: 100px;
+    max-height: 0;
     transition: max-height 0.3s ease;
     text-align: center;
     z-index: 5;
@@ -338,6 +408,7 @@
 
   .link-box:hover .link-text {
     max-height: 200px; /* Adjust the maximum height based on your content */
+    padding-bottom: 10px;
   }
 
   .portfolio-button {
@@ -346,19 +417,84 @@
     padding: 10px;
     margin-top: auto;
     align-self: flex-end;
-    background-color: white;
-    border: 1px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f28c28;
+    border: 1px solid #000;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 700;
     text-align: center;
-    font-size: 0.7rem;
+    text-decoration: none;
+    cursor: pointer;
     z-index: 5;
+    transition: background-color 0.3s, font-size 0.3s; /* Add transition for smooth effect */
+  }
+
+  .portfolio-button:hover {
+    background-color: #6128f2; /* Change background color on hover */
+    font-size: 0.9rem; /* Increase font size on hover */
   }
 }
 
 @media (min-width: 1024px) {
   .name {
     font-size: 5.75rem;
+  }
+
+  .tech-right-side{
+    margin-left: 1rem;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    width: 300px;
+  }
+
+  .tech-description{
+    text-align: left;
+    font-size: 1.1rem;
+    display: flex;
+    width: 350px;
+    padding-bottom: 10px
+  }
+
+  .skills-box .skills-list {
+    justify-content: flex-start;
+    border-top: 1px black solid;
+    padding-top: 1rem;
+    width: 375px;
+  }
+
+  .skills-heading {
+    font-size: 1.2rem;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 8px;
+    background-image: url('../../assets/images/background-images/black-background.jpeg');
+    background-size: cover;
+    color: white;
+  }
+
+  .skills-heading span {
+    display: block;
+    font-weight: bold; /* Make the text bold */
+  }
+
+  .skills-box .skills-list span {
+    position: relative;
+    font-size: 0.8rem;
+    border-radius: 0;
+    padding: 5px 10px 5px 5px; /* Adjust padding as needed */
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      calc(100% - 5px) 50%,
+      100% 100%,
+      0% 100%
+    );
   }
 }

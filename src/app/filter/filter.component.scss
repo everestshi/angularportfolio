@@ -1,21 +1,82 @@
 .filter-section {
   display: flex;
-  flex-direction: column; /* Display items vertically */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .category-container {
   h3 {
     padding-top: 10px;
+    padding-bottom: 5px;
     margin: 0;
   }
 }
 
 .tags-container {
   display: flex; /* Use flexbox */
+  gap: 5px; /* Add space between tags */
   flex-wrap: wrap; /* Allow tags to wrap to the next row */
 }
 
 .tag-item {
   cursor: pointer;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px; /* Add rounded corners */
   padding: 5px 10px; /* Adjust padding as needed */
+}
+
+
+@media (min-width: 768px) {
+  .category-container {
+    h3 {
+      padding-top: 10px;
+      padding-bottom: 5px;
+      margin: 0;
+      font-size: 1.3rem; /* Adjust font size as needed */
+    }
+  }
+  
+  .tags-container {
+    display: flex; /* Use flexbox */
+    gap: 10px; /* Add space between tags */
+    flex-wrap: wrap; /* Allow tags to wrap to the next row */
+  }
+  
+  .tag-item {
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px; /* Add rounded corners */
+    padding: 5px 10px; /* Adjust padding as needed */
+  }
+}
+
+@media (min-width: 768px) {
+  .category-container {
+    h3 {
+      padding-top: 10px;
+      padding-bottom: 5px;
+      margin: 0;
+      font-size: 1.4rem; /* Adjust font size as needed */
+    }
+  }
+  
+  .tags-container {
+    display: flex; /* Use flexbox */
+    gap: 12px; /* Add space between tags */
+    flex-wrap: wrap; /* Allow tags to wrap to the next row */
+  }
+  
+  .tag-item {
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px; /* Add rounded corners */
+    padding: 5px 10px; /* Adjust padding as needed */
+  }
 }

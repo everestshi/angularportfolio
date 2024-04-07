@@ -1,6 +1,11 @@
 <div class="about-code-container">
   <!--<button type="button" class="back-btn" (click)="goBack()">Back</button>-->
-  <div class="name">Everest Shi</div>
+  <div class="name-container">
+    <div class="name">Everest Shi</div>
+    <div class="title-top">
+      I'm a Junior Software Developer based in Vancouver, Canada.
+    </div>
+  </div>
   <div class="description-box">
     <div class="title">
       I'm a Junior Software Developer based in Vancouver, Canada.
@@ -25,11 +30,22 @@
       <span>G</span>
       <span>Y</span>
     </div>
-    <div class="skills-list">
-      <span *ngFor="let tag of tags" [style.background-color]="tag.color">{{ tag.name }}</span>
+    <div class="tech-right-side">
+      <div class="tech-description">
+        I enjoy creating innovative solutions across full-stack web development,
+        promoting collaborative effort, and achieving consistent excellence.
+        Let's connect and create something remarkable together.
+      </div>
+      <div class="skills-list">
+        <span *ngFor="let tag of tags" [style.background-color]="tag.color">{{
+          tag.name
+        }}</span>
+      </div>
     </div>
   </div>
-  <a href="/developer-portfolio" class="mobile-portfolio-button">Explore my Portfolio</a>
+  <a href="/developer-portfolio" class="mobile-portfolio-button">
+    <div class="mobile-port-text">Explore my Portfolio</div>
+  </a>
   <div class="mobile-featured-title">Featured Projects</div>
   <div class="project-carousel-box">
     <app-code-carousel
@@ -45,17 +61,25 @@
   </div>
   <div class="code-right-side">
     <div class="social-links">
-      <a class="link-box box-1" href="https://github.com/everestshi">
-        <img src="../../assets/icons/github.svg" alt="GitHub Logo" />
-        <div class="link-text text-1">G<br />i<br />t<br />H<br />u<br />b</div>
-      </a>
-      <a class="link-box box-2" href="https://www.linkedin.com/in/everestshi/">
-        <img src="../../assets/icons/linkedin.svg" alt="LinkedIn Logo" />
-        <div class="link-text text-2">
-          L<br />i<br />n<br />k<br />e<br />d<br />I<br />n
-        </div>
-      </a>
-      <a
+      <div class="link-box-container">
+        <div class="dotted-barrier"></div>
+        <a class="link-box box-1" href="https://github.com/everestshi">
+          <img src="../../assets/icons/github.svg" alt="GitHub Logo" />
+          <div class="link-text text-1">G<br />i<br />t<br />H<br />u<br />b</div>
+        </a>
+      </div>
+      <div class="link-box-container">
+        <div class="dotted-barrier"></div>
+        <a class="link-box box-2" href="https://www.linkedin.com/in/everestshi/">
+          <img src="../../assets/icons/linkedin.svg" alt="LinkedIn Logo" />
+          <div class="link-text text-2">
+            L<br />i<br />n<br />k<br />e<br />d<br />I<br />n
+          </div>
+        </a>
+      </div>
+      <div class="link-box-container">
+        <div class="dotted-barrier"></div>
+        <a
         class="link-box box-3"
         href="https://www.instagram.com/mountainscandance/"
       >
@@ -64,10 +88,14 @@
           I<br />n<br />s<br />t<br />a<br />g<br />r<br />a<br />m
         </div>
       </a>
-      <a class="link-box box-4" href="/">
-        <img src="../../assets/icons/mail.svg" alt="Email Logo" />
-        <div class="link-text text-4">E<br />m<br />a<br />i<br />l</div>
-      </a>
+      </div>
+      <div class="link-box-container">
+        <div class="dotted-barrier"></div>
+        <a class="link-box box-4" href="mailto:shi.everest@gmail.com">
+          <img src="../../assets/icons/mail.svg" alt="Email Logo" />
+          <div class="link-text text-4">E<br />m<br />a<br />i<br />l</div>
+        </a>
+      </div>
     </div>
     <a href="/developer-portfolio" class="portfolio-button">Portfolio</a>
   </div>

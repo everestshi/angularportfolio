@@ -1,81 +1,158 @@
 <article>
-  <header>
-    <button type="button" (click)="goBack()">Back</button>
-  </header>
-
   <div class="grid-container">
-    <div class="box first-box">
-      <h1>{{ project?.name }}</h1>
-      <h2>{{ project?.subtitle }}</h2>
-    </div>
-    <div class="box second-box">
-      <div class="carousel-container">
-        <div
-          class="carousel-images"
-          [ngStyle]="{
-            transform: 'translateX(-' + currentImageIndex * 100 + '%)'
-          }"
+    <div class="mobile">
+      <div class="box second-box">
+        <div class="carousel-container">
+          <div
+            class="carousel-images"
+            [ngStyle]="{
+              transform: 'translateX(-' + currentImageIndex * 100 + '%)'
+            }"
+          >
+            <img
+              *ngFor="let image of project?.images; let i = index"
+              [src]="image"
+              [alt]="'Image ' + (i + 1) + ' of project ' + project?.name!"
+              class="carousel-image"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="box first-box">
+        <h1>{{ project?.name }}</h1>
+        <h2>{{ project?.subtitle }}</h2>
+      </div>
+      <div class="box fourth-box">
+        <div class="description-container">
+          {{ project?.description }}
+        </div>
+        <div class="tags-container">
+          <ul *ngIf="project?.tags?.length" class="project-tags">
+            <li *ngFor="let tag of project?.tags" [style.background-color]="tag.color">
+              {{ tag.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="box sixth-box">
+        <h3>Features</h3>
+        <ul *ngIf="project?.features?.length" class="features-list">
+          <li *ngFor="let feature of project?.features">
+            {{ feature }}
+          </li>
+        </ul>
+      </div>
+      <div class="box third-box">
+        <a class="github-link" href="{{ project?.ghlink }}">
+          <img src="../../assets/icons/github.svg" alt="GitHub Logo" />
+        </a>
+        <a
+          *ngIf="project?.weblink"
+          class="external-link"
+          href="{{ project?.weblink }}"
         >
           <img
-            *ngFor="let image of project?.images; let i = index"
-            [src]="image"
-            [alt]="'Image ' + (i + 1) + ' of project ' + project?.name!"
-            class="carousel-image"
+            src="../../assets/icons/external-link.svg"
+            alt="External Link Logo"
           />
+        </a>
+      </div>
+      <div class="box fifth-box">
+        <div class="carousel-container">
+          <div
+            class="carousel-images"
+            [ngStyle]="{
+              transform: 'translateX(' + reversedImageIndex * -100 + '%)'
+            }"
+          >
+            <img
+              *ngFor="let image of project?.images; let i = index"
+              [src]="image"
+              [alt]="'Image ' + (i + 1) + ' of project ' + project?.name!"
+              class="carousel-image"
+            />
+          </div>
         </div>
       </div>
     </div>
-    <div class="box third-box">
-      <a class="github-link" href="{{ project?.ghlink }}">
-        <img src="../../assets/icons/github.svg" alt="GitHub Logo" />
-      </a>
-      <a
-        *ngIf="project?.weblink"
-        class="external-link"
-        href="{{ project?.weblink }}"
-      >
-        <img
-          src="../../assets/icons/external-link.svg"
-          alt="External Link Logo"
-        />
-      </a>
-    </div>
-    <div class="box fourth-box">
-      <div class="description-container">
-        {{ project?.description }}
+
+    <div class="boxes">
+      <div class="box first-box">
+        <h1>{{ project?.name }}</h1>
+        <h2>{{ project?.subtitle }}</h2>
       </div>
-      <div class="tags-container">
-        <ul *ngIf="project?.tags?.length" class="project-tags">
-          <li *ngFor="let tag of project?.tags">
-            {{ tag.name }}
+      <div class="box second-box">
+        <div class="carousel-container">
+          <div
+            class="carousel-images"
+            [ngStyle]="{
+              transform: 'translateX(-' + currentImageIndex * 100 + '%)'
+            }"
+          >
+            <img
+              *ngFor="let image of project?.images; let i = index"
+              [src]="image"
+              [alt]="'Image ' + (i + 1) + ' of project ' + project?.name!"
+              class="carousel-image"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="box third-box">
+        <a class="github-link" href="{{ project?.ghlink }}">
+          <img src="../../assets/icons/github.svg" alt="GitHub Logo" />
+        </a>
+        <a
+          *ngIf="project?.weblink"
+          class="external-link"
+          href="{{ project?.weblink }}"
+        >
+          <img
+            src="../../assets/icons/external-link.svg"
+            alt="External Link Logo"
+          />
+        </a>
+      </div>
+      <div class="box fourth-box">
+        <div class="description-container">
+          {{ project?.description }}
+        </div>
+        <div class="tags-container">
+          <ul *ngIf="project?.tags?.length" class="project-tags">
+            <li *ngFor="let tag of project?.tags" [style.background-color]="tag.color">
+              {{ tag.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="box fifth-box">
+        <div class="carousel-container">
+          <div
+            class="carousel-images"
+            [ngStyle]="{
+              transform: 'translateX(' + reversedImageIndex * -100 + '%)'
+            }"
+          >
+            <img
+              *ngFor="let image of project?.images; let i = index"
+              [src]="image"
+              [alt]="'Image ' + (i + 1) + ' of project ' + project?.name!"
+              class="carousel-image"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="box sixth-box">
+        <ul *ngIf="project?.features?.length">
+          <li *ngFor="let feature of project?.features">
+            {{ feature }}
           </li>
         </ul>
       </div>
     </div>
-    <div class="box fifth-box">
-      <div class="carousel-container">
-        <div
-          class="carousel-images"
-          [ngStyle]="{
-            transform: 'translateX(' + reversedImageIndex * -100 + '%)'
-          }"
-        >
-          <img
-            *ngFor="let image of project?.images; let i = index"
-            [src]="image"
-            [alt]="'Image ' + (i + 1) + ' of project ' + project?.name!"
-            class="carousel-image"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="box sixth-box">
-      <ul *ngIf="project?.features?.length">
-        <li *ngFor="let feature of project?.features">
-          {{ feature }}
-        </li>
-      </ul>
-    </div>
+  </div>
+  <div class="back-btn" (click)="goBack()">
+    <div>Back</div>
   </div>
 </article>

@@ -14,9 +14,9 @@ import { Router } from '@angular/router';
 export class CodeCarouselComponent implements OnInit {
   @Input() slides: any[] = [];
   @Input() indicatorsVisible = true;
-  @Input() animationSpeed = 500;
+  @Input() animationSpeed = 300;
   @Input() autoPlay = true;
-  @Input() autoPlaySpeed = 5000;
+  @Input() autoPlaySpeed = 3000;
   currentSlide = 0;
   hidden = false;
   autoPlayInterval: any;
@@ -35,12 +35,22 @@ export class CodeCarouselComponent implements OnInit {
   }
 
   jumpToSlide(index: number) {
+    // First, make the current slide invisible
     this.hidden = true;
+    
+    // Wait for the opacity transition to finish before changing the slide
     setTimeout(() => {
+      // Update the slide
       this.currentSlide = index;
-      this.hidden = false;
+      
+      // Use a minimal timeout before making the slide visible again to ensure
+      // the slide content is updated in the DOM
+      setTimeout(() => {
+        this.hidden = false;
+      }, 10); // You might not need this if Angular's change detection works as intended after updating `currentSlide`, but it's a useful trick in some scenarios.
     }, this.animationSpeed);
   }
+  
 
   ngOnInit() {
     if (this.autoPlay) {
@@ -52,7 +62,6 @@ export class CodeCarouselComponent implements OnInit {
 
     // Method to navigate to project detail
     navigateToProjectDetail(project: any): void {
-      console.log('Clicked project:', project);
       // Navigate to project detail page using project ID
       this.router.navigate(['/developer-portfolio', project.id]);
     }
