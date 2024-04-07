@@ -14,11 +14,10 @@ export const PROJECTS: Project[] = [
       'A responsive website backed by .NET and SQL that integrates application design, agile management, and UML.',
     description: 'SIPS Cafe offers businesses a space to showcase their products and allow customers to order online with administrative security, user account creation/login, custom profile page, menu display, ordering system, payment integration, location, ratings, and many more features for a seamless user experience.',
     features: [
-      'Administrative security',
-      'User account creation/login',
-      'Custom profile pages',
-      'Menu display and ordering system',
-      'Payment integration',
+      'Administrative security with authorization and authentication',
+      'User account creation/login with Sendgrid email verification',
+      'Custom menu display and ordering system',
+      'PayPal payment and refund integration',
     ],
     ghlink: null,
     weblink: null,
@@ -43,8 +42,8 @@ export const PROJECTS: Project[] = [
     description: 'A fully function javascript game that features a fully functional battle system, NPCs, Mythic Monster stats, a storyline, and a custom world to explore.',
     features: [
       'Fully functional battle system',
-      'NPC interactions',
-      'In-depth Mythic Monster stats',
+      'NPC interactions and battles',
+      'In-depth Mythic Monster stats and level-up system',
       'Engaging storyline',
       'Expansive custom world'
     ],
@@ -61,7 +60,6 @@ export const PROJECTS: Project[] = [
     category_id: 2,
     category: { id: 2, slug: 'front-end', name: 'Front End' },
     tags: [
-      TAGS.find(tag => tag.slug === 'htmlcss')!,
       TAGS.find(tag => tag.slug === 'javascript')!
     ],
     featured: true,
@@ -77,7 +75,7 @@ export const PROJECTS: Project[] = [
       'Real-time data on films',
       'Favoriting and watch later features',
       'Search functionality',
-      'User-friendly interface',
+      'User-friendly responsive interface',
     ],
     ghlink: null,
     weblink: null,
@@ -104,7 +102,7 @@ export const PROJECTS: Project[] = [
       'Custom layouts',
       'Visually stunning UI',
       'Modular styles with SASS',
-      'Interactive slideshows with Swiper',
+      'Interactive carousels with Swiper',
     ],
     ghlink: null,
     weblink: null,
@@ -113,7 +111,6 @@ export const PROJECTS: Project[] = [
     category_id: 2,
     category: { id: 2, slug: 'front-end', name: 'Front End' },
     tags: [
-      TAGS.find(tag => tag.slug === 'htmlcss')!,
       TAGS.find(tag => tag.slug === 'sassscss')!,
       TAGS.find(tag => tag.slug === 'nodejs')!
     ],
@@ -128,8 +125,9 @@ export const PROJECTS: Project[] = [
     description: 'Using both relation and unstructured NoSQL databases, Zirvesti allows users to manipulate clients, products, users, and invoices. The application also features a login system with authentication and authorization, user settings and permissions, and other useful functionality.',
     features: [
       'Responsive design',
-      'Login system with authentication',
-      'Database management for clients, products, users, and invoices'
+      'Login system with authentication and authorization',
+      'Database management with CRUD features for clients, products, users, and invoices',
+      'User settings and permissions',
     ],
     ghlink: null,
     weblink: null,
@@ -141,7 +139,6 @@ export const PROJECTS: Project[] = [
       TAGS.find(tag => tag.slug === 'expressjs')!,
       TAGS.find(tag => tag.slug === 'mongodb')!,
       TAGS.find(tag => tag.slug === 'nodejs')!,
-      TAGS.find(tag => tag.slug === 'htmlcss')!
     ],
     featured: true,
   },
