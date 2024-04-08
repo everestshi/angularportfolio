@@ -58,12 +58,12 @@
               View Project Details
             </button>
             <div class="external-links">
-              <a class="github-link"> 
+              <a class="github-link" [href]="project?.ghlink"> 
                 <img src="../../assets/icons/github.svg" alt="GitHub Logo" />
               </a>
-              <a class="external-link"> 
+              <a class="external-link" *ngIf="project?.weblink" [href]="project?.weblink"> 
                 <img src="../../assets/icons/external-link.svg" alt="External Link Logo" />
-              </a>
+              </a>              
             </div>
           </div>
         </div>
