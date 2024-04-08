@@ -11,6 +11,7 @@ import { TagService } from '../services/tag.service';
 import { CodeCarouselComponent } from '../code-carousel/code-carousel.component';
 import { RouterOutlet } from '@angular/router';
 
+
 @Component({
   selector: 'app-code',
   standalone: true,
@@ -33,6 +34,8 @@ export class CodeComponent implements OnInit{
     this.titleService.setTitle('Everest Shi - Code');
     this.projectService.getProjects();
     this.tagService.getTags();
+    this.featuredProjects = this.projectService.getProjects()
+    .filter((project) => project.featured === true);
   }
 
   projects: Project[] = [];
@@ -41,7 +44,6 @@ export class CodeComponent implements OnInit{
   slides: any[] = [{}];
 
   ngOnInit(): void {
-    this.getProjects();
     this.getTags();
   }
 
