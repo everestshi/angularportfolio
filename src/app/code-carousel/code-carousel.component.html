@@ -2,18 +2,18 @@
   <div class="slides">
     <div
       class="slide"
-      *ngIf="slides[currentSlide]"
+      *ngIf="featuredProjects[currentSlide]"
       [ngStyle]="{
         opacity: hidden ? '0' : '1',
         transition: 'opacity ' + animationSpeed + 'ms ease-in-out'
       }"
-      (click)="navigateToProjectDetail(slides[currentSlide])"
+      (click)="navigateToProjectDetail(featuredProjects[currentSlide])"
     >
-      <div class="overlay">{{ slides[currentSlide].name }}</div>
+      <div class="overlay">{{ featuredProjects[currentSlide].name }}</div>
 
       <img
-        [src]="slides[currentSlide].carouselImages[0]"
-        alt="{{ slides[currentSlide].name }}"
+        [src]="featuredProjects[currentSlide].carouselImages[0]"
+        alt="{{ featuredProjects[currentSlide].name }}"
       />
     </div>
   </div>
